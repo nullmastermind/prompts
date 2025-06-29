@@ -1,0 +1,15 @@
+Changes made to coder.md:
+
+1. Added TypeScript type-check script auto-detection and creation requirement:
+   - Modified Code Quality Validation Requirements section (line 94-95)
+   - Updated Verification Phase section (line 184-185) 
+   - Enhanced Initialization section (line 216)
+
+Key addition: If `type-check` script is not found in TypeScript projects (React, Angular, Vue, Node, Deno, etc.), the Agent will automatically add it based on project type:
+- Vue.js: vue-tsc
+- React: tsc
+- Angular: ng build --dry-run
+- Node.js: tsc
+- Deno: deno check
+
+This ensures consistent type checking validation across all TypeScript-based projects regardless of their initial configuration.
