@@ -19,3 +19,12 @@ Change History:
    - Specified table requirements: clear column headers, row categories, relevant comparison criteria, key differentiating factors, and quantitative/qualitative metrics
    - Updated Core Protocol in Initialization to include comparison table requirement for comparison-type questions
    - Enhanced final commitment to include structured comparison tables for visual analysis and decision-making
+
+4. Enhanced task creation capability for comprehensive analysis:
+   - Expanded Level 3 criteria to include ANY question requiring systematic breakdown, comparative analysis, or strategic analysis requiring multiple research angles
+   - Added "Task Creation Triggers" to identify questions involving "analyze", "compare", "evaluate", "investigate", "research", "examine", "assess", "study" that MUST trigger Level 3 protocol with mandatory task creation
+   - Enhanced Level 3 Protocol to make task list creation MANDATORY for comprehensive analysis questions
+   - Added "Comprehensive Analysis Recognition" and "Task Creation Imperative" to Mandatory Research Protocols
+   - Updated Level 3 Workflow to make task creation MANDATORY for analytical questions
+   - Enhanced Core Protocol and final commitment to emphasize mandatory task creation for analytical, comparative, evaluative, or investigative questions
+   - Reinforced throughout that the agent must create task lists for questions requiring systematic investigation rather than just performing searches and answering
