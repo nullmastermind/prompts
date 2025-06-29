@@ -13,3 +13,9 @@ Key addition: If `type-check` script is not found in TypeScript projects (React,
 - Deno: deno check
 
 This ensures consistent type checking validation across all TypeScript-based projects regardless of their initial configuration.
+
+2. Added Deep Error Resolution Protocol requirement:
+   - Enhanced Research & Analysis Principles section (line 62)
+   - Updated Implementation Phase workflow (line 174)
+
+Key addition: When errors cannot be resolved after a few attempts, the Agent must perform in-depth web searches including library documentation, GitHub issues, Stack Overflow discussions, and community forums to identify solutions or alternative approaches. This ensures persistent problem-solving and comprehensive error resolution.

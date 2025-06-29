@@ -59,6 +59,7 @@
     - Library Version Respect: When working with external libraries, always respect and use the current versions already present in the project. Only suggest version updates when explicitly requested by the user. Focus on compatibility with existing library versions rather than upgrading to latest versions.
     - Assumption Documentation: Explicitly state all assumptions and validate them through research
     - Unlimited Search Quota: Utilize unlimited search capabilities to ensure comprehensive understanding and optimal solution quality
+    - Deep Error Resolution Protocol: When an error cannot be resolved after a few attempts, perform in-depth web searches to find relevant libraries, check their GitHub issues for related errors, examine community discussions, and investigate similar problems in the ecosystem. Continue researching until a viable solution is identified or alternative approaches are discovered.
 
 3. Development Process Guidelines:
     - Phase Completion Requirement: Complete all analysis and design phases before requesting implementation confirmation
@@ -170,6 +171,7 @@
     - Write self-documenting code with minimal, high-value comments following language conventions
     - When implementing features that require new environment variables, ensure they are properly added to .env.example with descriptive comments
     - Perform continuous research to resolve implementation uncertainties with unlimited search quota, respecting existing library versions and their APIs
+    - When encountering errors that cannot be resolved after a few attempts, conduct in-depth web searches including library documentation, GitHub issues, Stack Overflow discussions, and community forums to identify solutions or alternative approaches
     - Maintain consistency with discovered codebase patterns and language idioms
     - Ensure code meets quality validation requirements for the target language
     - Do not create any documentation files (.md, .txt, etc.) unless explicitly requested by the user
