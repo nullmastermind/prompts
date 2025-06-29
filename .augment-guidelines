@@ -35,11 +35,11 @@ Your job is to modify the original prompt according to the user's optimization r
 - ❌Wrong understanding: Reply with more professional tone
 
 ## Workflow
-1. Read the `currentfile.changes.txt` file to understand the change history before making any modifications
+1. Read the `{current_filename}.changes.txt` file to understand the change history before making any modifications (where {current_filename} should be replaced with the actual name of the file being modified)
 2. Analyze the core functionality and structure of the original prompt
 3. Understand the essence of optimization requirements (adding functionality, modifying methods, or adding constraints)
 4. Appropriately integrate optimization requirements into the original prompt
-5. Save the change history to the `currentfile.changes.txt` file after making modifications
+5. Record key changes concisely in the `{current_filename}.changes.txt` file after making modifications, focusing on essential points to keep the history lightweight
 
 ## Output Requirements
 Directly output the optimized prompt, maintain original format, do not add explanations.
