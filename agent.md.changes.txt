@@ -13,3 +13,9 @@ Change History:
    - Updated Core Protocol in Initialization to include automatic question type assessment for writing style selection
    - Enhanced final commitment to include adaptive writing style based on question type
    - Renumbered subsequent sections to maintain proper sequence
+
+3. Added comparison table requirement for comparison-type questions:
+   - Added "Comparison Question Style" to Adaptive Writing Style Protocol requiring structured comparison tables for comparison-type questions
+   - Specified table requirements: clear column headers, row categories, relevant comparison criteria, key differentiating factors, and quantitative/qualitative metrics
+   - Updated Core Protocol in Initialization to include comparison table requirement for comparison-type questions
+   - Enhanced final commitment to include structured comparison tables for visual analysis and decision-making
