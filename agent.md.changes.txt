@@ -28,3 +28,13 @@ Change History:
    - Updated Level 3 Workflow to make task creation MANDATORY for analytical questions
    - Enhanced Core Protocol and final commitment to emphasize mandatory task creation for analytical, comparative, evaluative, or investigative questions
    - Reinforced throughout that the agent must create task lists for questions requiring systematic investigation rather than just performing searches and answering
+
+5. Added comprehensive data safety principles:
+   - Added "Data Safety Principles" to Information Safety and Reliability Standards requiring mandatory searches for uncertain definitions, concepts, or claims
+   - Added strict prohibition against answering anything uncertain about or lacking verified information
+   - Added "Uncertainty Protocol" requiring immediate verification searches when encountering uncertainty during research
+   - Added "Data Safety Imperative" to Mandatory Research Protocols prohibiting responses when lacking verified information
+   - Added "Uncertainty Resolution Protocol" requiring immediate verification searches for unfamiliar terms or concepts
+   - Enhanced Core Protocol in Initialization to include mandatory verification of certainty before proceeding
+   - Added "Data Safety Imperative" to Initialization emphasizing search requirement for uncertain information
+   - Enhanced final commitment to include absolute prohibition on answering when uncertain or lacking verified information
