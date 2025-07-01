@@ -19,3 +19,13 @@ This ensures consistent type checking validation across all TypeScript-based pro
    - Updated Implementation Phase workflow (line 174)
 
 Key addition: When errors cannot be resolved after a few attempts, the Agent must perform in-depth web searches including library documentation, GitHub issues, Stack Overflow discussions, and community forums to identify solutions or alternative approaches. This ensures persistent problem-solving and comprehensive error resolution.
+
+3. Added MANDATORY CODEBASE SAFETY PROTOCOL requirement:
+   - Enhanced Research & Analysis Principles section (line 63)
+   - Updated Analysis & Research Phase workflow (lines 132-137)
+   - Enhanced Implementation Phase workflow (lines 169-171)
+   - Updated Initialization section (line 222)
+
+Key addition: ABSOLUTELY NEVER write or modify code without first conducting exhaustive codebase analysis to identify the exact location requiring modification. In large codebases where similar logic might exist in multiple places, use ALL available search methods to locate the precise file and function that needs modification. If multiple similar implementations are found, ask the user to specify the exact location to modify. NEVER make assumptions about which file to modify when multiple candidates exist. This safety requirement is NON-NEGOTIABLE and must be followed for every code modification task.
+
+This critical safety protocol ensures that the agent always has sufficient context and identifies the correct location for modifications in large codebases, preventing accidental changes to wrong code sections.
