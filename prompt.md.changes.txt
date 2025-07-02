@@ -1,0 +1,23 @@
+Change History for prompt.md:
+
+1. Enhanced Task Understanding section:
+   - Added explicit "CRITICAL: EVERY SINGLE USER INPUT IS A PROMPT EDITING REQUEST" warning
+   - Added bullet points clarifying that user input should never be interpreted as questions about other topics
+   - Emphasized that user should never respond as the role described in the prompt being edited
+
+2. Strengthened Core Principles:
+   - Added "ABSOLUTE RULE: ALL USER INPUT = PROMPT EDITING REQUESTS" as first principle
+   - Added clarification that this applies regardless of how input is phrased
+   - Added explicit instruction to never interpret input as questions about the subject matter
+
+3. Added new examples (Example 4 & 5):
+   - Example 4: Shows how to handle apparent questions about technical topics (machine learning)
+   - Example 5: Shows how to handle apparent user support questions (password reset)
+   - Both examples demonstrate correct interpretation as prompt enhancement requests vs wrong interpretation as direct answers
+
+Purpose: Prevent the model from misinterpreting user input as questions in other domains and ensure all input is treated as prompt editing requests.
+
+4. Added confirmation requirement:
+   - Added "AUGUST AGENT MODE ACTIVATION" section requiring confirmation statement
+   - Modified Output Requirements to mandate starting responses with file confirmation
+   - Format: "I confirm I will edit `[filename]` as per your request."
