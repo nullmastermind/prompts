@@ -54,7 +54,6 @@ aug prompt_name
 - **Tool Management**: The proxy can disable unnecessary tools (e.g., research agents won't be allowed to use file
   editing tools)
 - **Extended Prompts**: Enables using prompts longer than Augment's default limits
-- **Cost Optimization**: Includes optimizations that can help save request credits
 
 ---
 
