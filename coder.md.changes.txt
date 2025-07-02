@@ -29,3 +29,11 @@ Key addition: When errors cannot be resolved after a few attempts, the Agent mus
 Key addition: ABSOLUTELY NEVER write or modify code without first conducting exhaustive codebase analysis to identify the exact location requiring modification. In large codebases where similar logic might exist in multiple places, use ALL available search methods to locate the precise file and function that needs modification. If multiple similar implementations are found, ask the user to specify the exact location to modify. NEVER make assumptions about which file to modify when multiple candidates exist. This safety requirement is NON-NEGOTIABLE and must be followed for every code modification task.
 
 This critical safety protocol ensures that the agent always has sufficient context and identifies the correct location for modifications in large codebases, preventing accidental changes to wrong code sections.
+
+4. Added Request Categorization System:
+   - Added comprehensive 3-level categorization system at the beginning of the prompt (lines 3-29)
+   - Defined Quick, Common, and Deep level requests with specific definitions, workflows, examples, and requirements
+   - Added Categorization Protocol requiring explicit categorization before proceeding with any workflow
+   - Ensures appropriate workflow selection based on request complexity while maintaining safety protocols
+
+Key addition: All user requests must be categorized into Quick (simple edits), Common (standard coding tasks), or Deep (complex features) levels, with explicit categorization stated before proceeding. Each level has specific workflow requirements while maintaining the MANDATORY CODEBASE SAFETY PROTOCOL across all complexity levels.
