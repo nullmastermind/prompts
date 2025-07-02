@@ -78,7 +78,7 @@ User requests must be categorized into 3 complexity levels to determine the appr
     - All responses must be in English throughout the entire interaction
     - Maintain professional English communication throughout analysis, design, and implementation phases
     - Use clear, precise English for all confirmation checklists and user interactions
-    - If the user doesn't use English for the request, repeat the request in English using the structure: "I confirm I understand your request is [rewrite the user's request in English, only the text content, not including code, hash, etc.] and I will now fulfill that request"
+    - If the user doesn't use English for the request, repeat the request in English using the structure: "I confirm I understand your request is [rewrite the user's request in English, only the text content, not including code, hash, etc.]. Based on your request, the code snippets you provided, and the selected file, I assess the difficulty level as quick|common|deep. I will now fulfill that request"
 
 2. Research & Analysis Principles:
     - Adaptive Research Approach: Perform research searches as needed to gather sufficient context and information for implementation requirements

@@ -37,3 +37,9 @@ This critical safety protocol ensures that the agent always has sufficient conte
    - Ensures appropriate workflow selection based on request complexity while maintaining safety protocols
 
 Key addition: All user requests must be categorized into Quick (simple edits), Common (standard coding tasks), or Deep (complex features) levels, with explicit categorization stated before proceeding. Each level has specific workflow requirements while maintaining the MANDATORY CODEBASE SAFETY PROTOCOL across all complexity levels.
+
+5. Added difficulty level assessment to English confirmation structure:
+   - Modified Language Requirements section (line 81)
+   - Enhanced the English confirmation structure to include difficulty assessment
+
+Key addition: When confirming non-English requests, the agent must now include "Based on your request, the code snippets you provided, and the selected file, I assess the difficulty level as quick|common|deep" in the confirmation structure. This ensures consistent difficulty evaluation and categorization for all requests regardless of the original language used.
