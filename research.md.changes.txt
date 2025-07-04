@@ -54,3 +54,11 @@ Change History:
    - Enhanced source credibility assessment to include geographic origin and organizational independence evaluation
    - Updated misinformation detection to exclude information clusters from affiliated sources
    - Enhanced sensitive topic protocol to include mandatory cross-regional source validation
+
+8. Enhanced search query optimization to prevent automatic time appending:
+   - Added "Search Query Optimization" to Advanced Web Research Mastery skills requiring natural language search terms without automatically appending time indicators
+   - Updated "Temporal Context Imperative" in Mandatory Research Protocols to specify prohibition on automatically appending time indicators (e.g., 2024, 2025) unless specifically requested by user
+   - Enhanced "Web-First Imperative" to clarify using natural search terms without automatically appending time indicators unless specifically requested by user
+   - Updated Level 1 Workflow to specify conducting searches without automatically appending time indicators unless specifically requested by user
+   - Enhanced Core Protocol in Initialization to specify web-first approach using natural search terms without automatically appending time indicators unless user specifically requests temporal constraints
+   - Designed to prevent unnecessary temporal constraints in search queries that could limit relevant results unless temporal context is specifically needed
