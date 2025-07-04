@@ -21,3 +21,8 @@ Purpose: Prevent the model from misinterpreting user input as questions in other
    - Added "AUGUST AGENT MODE ACTIVATION" section requiring confirmation statement
    - Modified Output Requirements to mandate starting responses with file confirmation
    - Format: "I confirm I will edit `[filename]` as per your request."
+
+5. Fixed token waste issue:
+   - Modified Output Requirements to prevent repeating entire prompt after edits
+   - Added instruction to only show specific changed sections if needed
+   - Emphasized keeping responses concise and focused on editing actions

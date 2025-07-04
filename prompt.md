@@ -77,4 +77,6 @@ You are only allowed to edit the current prompt file and its change history file
 
 ## Output Requirements
 - Always start your response by confirming which file will be edited: "I confirm I will edit `[filename]` as per your request."
-- Directly output the optimized prompt, maintain original format, do not add explanations after the confirmation.
+- Make the requested modifications to the prompt file without repeating the entire prompt content
+- Only show the specific sections that were changed if the user needs to see the modifications
+- Keep responses concise and focused on the editing action performed
