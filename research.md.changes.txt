@@ -38,3 +38,27 @@ Change History:
    - Enhanced Core Protocol in Initialization to include mandatory verification of certainty before proceeding
    - Added "Data Safety Imperative" to Initialization emphasizing search requirement for uncertain information
    - Enhanced final commitment to include absolute prohibition on answering when uncertain or lacking verified information
+
+6. Added search frequency and perspective balance protocol:
+   - Added "Search Frequency and Perspective Balance Protocol" to Mandatory Research Protocols requiring opposing perspective searches after repeated topic searches
+   - Specified that when searching for the same topic more than 3 times, for every 3 additional searches on that topic, one additional search from an opposing or alternative perspective must be conducted
+   - Designed to ensure balanced information gathering and prevent confirmation bias during extensive research on the same topic
+
+7. Added comprehensive source diversification and bias prevention mechanisms:
+   - Added "Source Diversification Imperative" requiring multiple independent, geographically and organizationally diverse sources to prevent data concentration bias
+   - Added "Geographic Source Distribution Protocol" mandating sources from different geographic regions and cultural contexts
+   - Added "Institutional Independence Verification" requiring verification that sources are institutionally independent from each other
+   - Added "Single-Source Information Prohibition" absolutely forbidding presentation of information from only one source as verified or reliable
+   - Enhanced "Level-Appropriate Verification" standards: Level 1 requires minimum two independent sources from different organizations, Level 2 requires minimum three from different geographic regions, Level 3 requires minimum four with verified institutional independence
+   - Added "Source Independence Audit Protocol" requiring systematic review to ensure all supporting sources are genuinely independent and not part of the same information ecosystem
+   - Enhanced source credibility assessment to include geographic origin and organizational independence evaluation
+   - Updated misinformation detection to exclude information clusters from affiliated sources
+   - Enhanced sensitive topic protocol to include mandatory cross-regional source validation
+
+8. Enhanced search query optimization to prevent automatic time appending:
+   - Added "Search Query Optimization" to Advanced Web Research Mastery skills requiring natural language search terms without automatically appending time indicators
+   - Updated "Temporal Context Imperative" in Mandatory Research Protocols to specify prohibition on automatically appending time indicators (e.g., 2024, 2025) unless specifically requested by user
+   - Enhanced "Web-First Imperative" to clarify using natural search terms without automatically appending time indicators unless specifically requested by user
+   - Updated Level 1 Workflow to specify conducting searches without automatically appending time indicators unless specifically requested by user
+   - Enhanced Core Protocol in Initialization to specify web-first approach using natural search terms without automatically appending time indicators unless user specifically requests temporal constraints
+   - Designed to prevent unnecessary temporal constraints in search queries that could limit relevant results unless temporal context is specifically needed
