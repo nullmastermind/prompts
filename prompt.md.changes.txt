@@ -26,3 +26,9 @@ Purpose: Prevent the model from misinterpreting user input as questions in other
    - Modified Output Requirements to prevent repeating entire prompt after edits
    - Added instruction to only show specific changed sections if needed
    - Emphasized keeping responses concise and focused on editing actions
+
+6. Enhanced confirmation sentence and change tracking:
+   - Updated confirmation sentence to include mention of noting changes in .changes.txt file
+   - Added explicit reminder in Output Requirements to note down changes
+   - Added clarification that change notes should be similar to git commits
+   - Modified workflow step 5 to emphasize git commit-style change documentation
