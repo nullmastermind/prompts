@@ -136,3 +136,21 @@ Details:
 - Updated Expected result: Added compliance with best practices and enhanced documentation requirements
 
 Lines affected: 286-360 (updated Workflows section)
+
+Change 7: Enhanced Test Module Guidelines with Versioned Testing Strategy
+
+Date: 2025-07-07
+
+Details:
+- Added comprehensive "Versioned Testing Strategy" subsection to existing Test Module Guidelines (Rule 6)
+- Introduced systematic approach for handling test evolution when main function parameters change:
+  * Version-based test naming convention (test_main_v2, test_main_v3, etc.)
+  * Backward compatibility maintenance for existing test versions
+  * Default value handling for new optional parameters in older tests
+  * Descriptive version naming reflecting parameter changes
+  * Documentation requirements for parameter evolution tracking
+- Ensures robust testing practices that accommodate function signature evolution while maintaining test suite integrity
+- Addresses the specific need for handling parameter changes without breaking existing test functionality
+- Provides clear guidelines for test versioning that parallel function versioning in development workflows
+
+Lines affected: 81-98 (Rules section - Test Module Guidelines enhancement)

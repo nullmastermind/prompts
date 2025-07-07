@@ -90,6 +90,13 @@
     - Test Focus: Test functions should focus on validating the main function's core functionality and expected
       behavior,
       serving as the primary method to verify script execution in the library context
+   - Versioned Testing Strategy: When main function parameters change, implement versioned testing approach:
+       * Create new test functions with version suffixes (e.g., `test_main_v2`, `test_main_v3`) for new parameter sets
+       * Maintain existing test versions to ensure backward compatibility when new optional parameters are added
+       * Ensure older test versions continue to work by providing default values for new optional parameters
+       * Use descriptive version naming that reflects the parameter changes (e.g., `test_main_with_auth`,
+         `test_main_extended`)
+       * Document parameter evolution in test comments to track functional changes over time
 
 7. Windmill Platform Limitations and Constraints:
    - Single File Architecture: All Rust code must be contained within a single src/lib.rs file with no external
