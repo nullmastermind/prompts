@@ -20,3 +20,13 @@ Details:
 - Emphasizes test focus on validating main function's core functionality
 
 Lines affected: 72-86 (Rules section)
+
+Change 3: Enhanced Test Module Guidelines with library context clarification
+
+Details:
+- Added "Library Testing Purpose" explanation clarifying that Windmill scripts are libraries without traditional main entry points
+- Explained that test modules serve as the primary method to run and verify main function behavior during development
+- Enhanced the testing rationale to reflect the library nature of Windmill scripts
+- Clarified that tests serve as the execution verification method in the library context
+
+Lines affected: 81-90 (Rules section - Test Module Guidelines)

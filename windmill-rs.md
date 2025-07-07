@@ -79,12 +79,17 @@
       central entry point and orchestrator of all functionality
 
 6. Test Module Guidelines:
+    - Library Testing Purpose: Since Windmill scripts are written as libraries without a traditional main entry point
+      for
+      execution testing, utilize the test module to run and verify the main function's behavior during development
     - Minimal Testing: When creating test modules, unless specifically requested otherwise, create only ONE test
       function
-      for the happy case of the main function
+      for the happy case of the main function to verify it executes correctly
     - Test Expansion: Only add additional test functions when the input parameters of the main function change or when
-      explicitly requested
-    - Test Focus: Test functions should focus on validating the main function's core functionality and expected behavior
+      explicitly requested for more comprehensive testing scenarios
+    - Test Focus: Test functions should focus on validating the main function's core functionality and expected
+      behavior,
+      serving as the primary method to verify script execution in the library context
 
 ## Workflows
 
