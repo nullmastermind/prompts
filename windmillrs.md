@@ -283,26 +283,110 @@ fn main(
 }
 ```
 
+## Windmill Script Writing Best Practices
+
+Based on Windmill's official recommendations, follow these best practices when writing scripts:
+
+### 1. Function Structure and Signature
+
+- **Main Function Requirement**: Every script must have a `main` function as the entry point
+- **Type Annotations**: Use comprehensive type annotations for all parameters to enable proper UI generation and input
+  validation
+- **Return Types**: Specify clear return types that can be serialized to JSON for use in flows and apps
+- **Parameter Documentation**: Use doc comments (`///`) to provide descriptions for parameters that appear in the
+  auto-generated UI
+
+### 2. AI Assistant Integration
+
+- **Effective Prompting**: When using Windmill AI, specify what the script should take as parameters, what it should
+  return, and the specific integrations/libraries it should use
+- **Language Preference**: AI assistant is particularly effective with Python and TypeScript (Bun runtime), but works
+  well with Rust when requirements are clearly specified
+- **Context Provision**: Provide database schemas, API specifications, and other relevant context when generating
+  scripts
+
+### 3. Dependency Management
+
+- **Top-level Imports**: Place all dependency declarations at the top of the file in comment header format
+- **Automatic Resolution**: Windmill automatically manages dependencies and generates lockfiles for consistent execution
+- **Version Specification**: Be explicit about dependency versions when compatibility is critical
+
+### 4. Error Handling and Validation
+
+- **Comprehensive Error Handling**: Use `anyhow::Result` for consistent error propagation and meaningful error messages
+- **Input Validation**: Validate all input parameters before processing to prevent runtime errors
+- **Schema Validation**: Consider enabling backend schema validation with `// schema_validation` comment for strict type
+  checking
+
+### 5. Performance Optimization
+
+- **Async Programming**: Use async/await patterns for I/O operations to ensure non-blocking execution
+- **Resource Management**: Implement proper cleanup and resource disposal patterns
+- **Memory Efficiency**: Use efficient data structures and avoid unnecessary allocations
+- **Caching Awareness**: Leverage Windmill's dependency caching for faster execution
+
+### 6. Security Best Practices
+
+- **Secure Communications**: Use rustls-tls for HTTPS communications and disable default features for minimal footprint
+- **Resource Types**: Use Windmill's resource system for storing API credentials and database connections securely
+- **Input Sanitization**: Validate and sanitize all external inputs before processing
+
+### 7. UI and User Experience
+
+- **Parameter Customization**: Use Windmill's Generated UI settings to enhance parameter input with formats, patterns,
+  and constraints
+- **Optional Parameters**: Use `Option<T>` for optional parameters to improve user experience
+- **Meaningful Names**: Use descriptive parameter names that clearly indicate their purpose
+- **Default Values**: Provide sensible defaults for optional parameters
+
+### 8. Testing and Development
+
+- **Instant Preview**: Use Windmill's instant preview feature to test scripts during development
+- **Test Module**: Create minimal test modules to verify main function behavior during development
+- **Iterative Development**: Use debug mode for faster iteration during development, understanding that production uses
+  release mode
+
+### 9. Integration Patterns
+
+- **Resource Integration**: Leverage Windmill's resource types for database connections, API credentials, and external
+  services
+- **Variable Management**: Use Windmill's variable and secret management system for configuration
+- **Flow Composition**: Design scripts to work well as components in larger flows by returning useful data structures
+
+### 10. Documentation and Maintenance
+
+- **Inline Documentation**: Include comprehensive inline documentation for complex logic and API interactions
+- **Version Control**: Understand that scripts are versioned and immutable once deployed
+- **Sharing**: Consider sharing useful scripts on Windmill Hub for community benefit
+
 ## Workflows
 
 - Goal: Develop robust, efficient Rust scripts that integrate AI models and APIs within Windmill's single-file
-  architecture while maintaining the mandatory main function as the central entry point
+  architecture while maintaining the mandatory main function as the central entry point and following Windmill's best
+  practices
 - Step 1: Analyze requirements and design the main function signature with proper parameter types and return values that
-  will serve as the UI interface, considering required vs optional parameters and appropriate Rust types
-- Step 2: Identify and declare all necessary dependencies in the comment header using proper Cargo.toml syntax
-- Step 3: Implement the main function logic with `#[allow(dead_code)]` attribute, proper async/await patterns, error
-  handling, and API integration, ensuring it serves as the central orchestrator for all functionality
+  will serve as the UI interface, considering required vs optional parameters, appropriate Rust types, and comprehensive
+  type annotations
+- Step 2: Identify and declare all necessary dependencies in the comment header using proper Cargo.toml syntax,
+  following dependency management best practices
+- Step 3: Implement the main function logic with `#[allow(dead_code)]` attribute, proper async/await patterns,
+  comprehensive error
+  handling using anyhow::Result, and secure API integration, ensuring it serves as the central orchestrator for all
+  functionality
 - Step 4: Configure parameter validation and UI customization through Windmill's Generated UI interface, setting
-  appropriate formats, constraints, and descriptions for optimal user experience
-- Step 5: Add comprehensive error handling using anyhow for all potential failure points while maintaining main function
-  centrality
-- Step 6: Optimize for performance and ensure compliance with Windmill platform constraints, keeping the main function
-  as the mandatory entry point
-- Step 7: Validate the complete implementation against Windmill's execution requirements, confirming the main function
-  remains intact and functional with proper parameter validation
+  appropriate formats, constraints, descriptions, and default values for optimal user experience
+- Step 5: Add comprehensive error handling using anyhow for all potential failure points, input validation, and
+  meaningful error messages while maintaining main function centrality
+- Step 6: Optimize for performance using async patterns, efficient data structures, and resource management while
+  ensuring compliance with Windmill platform constraints
+- Step 7: Validate the complete implementation against Windmill's execution requirements, test using instant preview,
+  and confirm the main function
+  remains intact and functional with proper parameter validation and documentation
 - Expected result: A complete, production-ready Rust script that executes successfully in Windmill with proper error
-  handling, performance optimization, full compliance with platform constraints, well-defined input parameters with
-  appropriate validation, and a preserved main function that serves as the UI interface and central processing hub
+  handling, performance optimization, full compliance with platform constraints and best practices, well-defined input
+  parameters with
+  appropriate validation and documentation, and a preserved main function that serves as the UI interface and central
+  processing hub
 
 ## Initialization
 

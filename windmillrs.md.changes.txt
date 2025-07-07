@@ -50,3 +50,89 @@ Details:
 - Helps prevent common issues and misunderstandings about Windmill's execution environment
 
 Lines affected: 93-114 (Rules section - new Windmill Platform Limitations section)
+
+Change 5: Added comprehensive Windmill Script Writing Best Practices section
+
+Date: 2025-07-07
+
+Details:
+- Added new major section "Windmill Script Writing Best Practices" based on official Windmill documentation
+- Inserted between "Input Parameter Definitions" and "Workflows" sections
+- Contains 10 comprehensive categories of best practices:
+
+  1. Function Structure and Signature
+     - Main function requirement and entry point guidelines
+     - Type annotation importance for UI generation
+     - Return type specifications for JSON serialization
+     - Parameter documentation using doc comments
+
+  2. AI Assistant Integration
+     - Effective prompting strategies for Windmill AI
+     - Language preferences (Python/TypeScript particularly effective)
+     - Context provision for better code generation
+
+  3. Dependency Management
+     - Top-level import placement in comment headers
+     - Automatic dependency resolution understanding
+     - Version specification for compatibility
+
+  4. Error Handling and Validation
+     - Comprehensive error handling with anyhow::Result
+     - Input validation before processing
+     - Schema validation options
+
+  5. Performance Optimization
+     - Async programming patterns for I/O operations
+     - Resource management and cleanup
+     - Memory efficiency considerations
+     - Caching awareness
+
+  6. Security Best Practices
+     - Secure communications with rustls-tls
+     - Resource system usage for credentials
+     - Input sanitization requirements
+
+  7. UI and User Experience
+     - Parameter customization through Generated UI
+     - Optional parameter handling with Option<T>
+     - Meaningful naming conventions
+     - Default value provision
+
+  8. Testing and Development
+     - Instant preview utilization
+     - Test module creation guidelines
+     - Iterative development understanding
+
+  9. Integration Patterns
+     - Resource integration for external services
+     - Variable and secret management
+     - Flow composition design principles
+
+  10. Documentation and Maintenance
+      - Inline documentation requirements
+      - Version control understanding
+      - Community sharing considerations
+
+Source Information:
+- Compiled from official Windmill documentation including:
+  * Windmill AI documentation (https://www.windmill.dev/docs/core_concepts/ai_generation)
+  * Python quickstart guide (https://www.windmill.dev/docs/getting_started/scripts_quickstart/python)
+  * TypeScript quickstart guide (https://www.windmill.dev/docs/getting_started/scripts_quickstart/typescript)
+  * Code assistants documentation (https://www.windmill.dev/docs/code_editor/assistants)
+
+Lines affected: 286-360 (new Windmill Script Writing Best Practices section)
+
+Change 6: Enhanced Workflows section with best practices integration
+
+Details:
+- Updated existing workflow steps to incorporate newly added best practices
+- Enhanced Step 1: Added comprehensive type annotations and parameter design considerations
+- Enhanced Step 2: Included dependency management best practices reference
+- Enhanced Step 3: Added comprehensive error handling with anyhow::Result and secure API integration
+- Enhanced Step 4: Included default values and enhanced user experience considerations
+- Enhanced Step 5: Added input validation and meaningful error messages
+- Enhanced Step 6: Included async patterns, efficient data structures, and resource management
+- Enhanced Step 7: Added testing using instant preview and documentation requirements
+- Updated Expected result: Added compliance with best practices and enhanced documentation requirements
+
+Lines affected: 286-360 (updated Workflows section)
