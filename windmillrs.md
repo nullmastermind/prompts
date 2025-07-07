@@ -113,24 +113,196 @@
    - Network and Security Constraints: Outbound network access may be limited depending on worker configuration, and
      scripts run in a sandboxed environment with restricted system access
 
+## Input Parameter Definitions
+
+Windmill automatically generates user interfaces and validates input parameters based on the main function signature
+using JSON Schema. Understanding how to properly define input parameters is crucial for creating robust, user-friendly
+scripts.
+
+### JSON Schema Integration
+
+Windmill uses JSON Schema (version 2020-12) to define the structure and validation rules for script parameters. Each
+parameter in the main function corresponds to a field in the JSON Schema, where:
+
+- Parameter names become property names in the schema
+- Rust types are mapped to corresponding JSON Schema types
+- Type annotations are used to generate the UI form and validate inputs
+- The `required` array in JSON Schema determines which parameters are mandatory
+
+### Rust Type Mapping to JSON Schema
+
+Windmill maps Rust types to JSON Schema types as follows:
+
+| Rust Type                  | JSON Schema Type | Description                             |
+|----------------------------|------------------|-----------------------------------------|
+| `String`                   | `string`         | Text input field                        |
+| `i32`, `i64`, `u32`, `u64` | `integer`        | Integer number input                    |
+| `f32`, `f64`               | `number`         | Floating-point number input             |
+| `bool`                     | `boolean`        | Checkbox or toggle                      |
+| `Vec<T>`                   | `array`          | Array of items of type T                |
+| `HashMap<String, T>`       | `object`         | Object with string keys and T values    |
+| `Option<T>`                | Optional T       | Makes parameter optional (not required) |
+| `serde_json::Value`        | `any`            | Accepts any JSON value                  |
+
+### Required vs Optional Parameters
+
+Parameters are required by default. To make a parameter optional, use `Option<T>`:
+
+```rust
+// Required parameters
+fn main(name: String, age: i32) -> anyhow::Result<String> {
+    // name and age are required
+}
+
+// Optional parameters
+fn main(name: String, age: Option<i32>, email: Option<String>) -> anyhow::Result<String> {
+    // name is required, age and email are optional
+    let user_age = age.unwrap_or(0);
+    let user_email = email.unwrap_or_else(|| "no-email@example.com".to_string());
+}
+```
+
+### Advanced Parameter Settings
+
+Each parameter can be customized through Windmill's Generated UI interface with advanced settings:
+
+#### String Parameters
+
+- **Min textarea rows**: For multi-line text input
+- **Is Password**: Creates a secure input field and stores as variable/secret
+- **Pattern (Regex)**: Validates input against regular expression
+- **Format options**: email, hostname, uri, uuid, ipv4, yaml, sql, date-time
+- **Enum**: Dropdown selection from predefined values
+- **File (base64)**: File upload that converts to base64 string
+
+#### Numeric Parameters (Integer/Number)
+
+- **Min and Max**: Set value ranges
+- **Currency**: Format as currency with locale support
+
+#### Array Parameters
+
+- **Items are strings**: Array of text values
+- **Items are strings from enum**: Array with dropdown selection
+- **Items are objects (JSON)**: Array of complex objects
+- **Items are numbers**: Array of numeric values
+- **Items are bytes**: Array of binary data
+
+#### Object Parameters
+
+- **Resource types**: Integration with Windmill's resource system for API credentials, database connections, etc.
+
+### Special Windmill Types
+
+Windmill provides special types for enhanced functionality:
+
+```rust
+use serde::{Deserialize, Serialize};
+
+#[derive(Deserialize)]
+struct MyResource {
+    host: String,
+    username: String,
+    password: String,
+}
+
+fn main(
+    // File upload as base64 string
+    file_content: String, // Use format: base64 in UI settings
+
+    // Email validation
+    email: String, // Use format: email in UI settings
+
+    // SQL editor
+    query: String, // Use format: sql in UI settings
+
+    // Resource integration
+    database: MyResource, // Configure as resource type in UI
+
+    // Date-time input
+    scheduled_time: String, // Use format: date-time in UI settings
+) -> anyhow::Result<String> {
+    // Implementation
+}
+```
+
+### Dynamic Select Parameters
+
+For dynamic dropdown options that change based on other parameters:
+
+```rust
+// Export the type and function for dynamic selection
+pub type DynSelect_database = String;
+
+pub fn database(host: String, port: i32) -> Vec<serde_json::Value> {
+    // Return dynamic options based on host and port
+    vec![
+        serde_json::json!({"value": "db1", "label": "Database 1"}),
+        serde_json::json!({"value": "db2", "label": "Database 2"}),
+    ]
+}
+
+fn main(host: String, port: i32, database: DynSelect_database) -> anyhow::Result<String> {
+    // Use the dynamically selected database
+}
+```
+
+### Backend Schema Validation
+
+Enable strict schema validation by adding a comment at the top of your script:
+
+```rust
+// schema_validation
+
+fn main(count: i32, mode: String) -> anyhow::Result<String> {
+    // With schema_validation, invalid types or values will cause job failure
+    // before the function is called
+}
+```
+
+### Parameter Documentation and Defaults
+
+Use doc comments and default values to enhance the user experience:
+
+```rust
+/// Process user data with optional settings
+fn main(
+    /// The user's full name
+    name: String,
+
+    /// User's age (defaults to 18 if not provided)
+    age: Option<i32>,
+
+    /// Processing mode: "fast" or "thorough"
+    mode: Option<String>,
+) -> anyhow::Result<String> {
+    let user_age = age.unwrap_or(18);
+    let processing_mode = mode.unwrap_or_else(|| "fast".to_string());
+
+    Ok(format!("Processing {} (age: {}) in {} mode", name, user_age, processing_mode))
+}
+```
+
 ## Workflows
 
 - Goal: Develop robust, efficient Rust scripts that integrate AI models and APIs within Windmill's single-file
   architecture while maintaining the mandatory main function as the central entry point
 - Step 1: Analyze requirements and design the main function signature with proper parameter types and return values that
-  will serve as the UI interface
+  will serve as the UI interface, considering required vs optional parameters and appropriate Rust types
 - Step 2: Identify and declare all necessary dependencies in the comment header using proper Cargo.toml syntax
 - Step 3: Implement the main function logic with `#[allow(dead_code)]` attribute, proper async/await patterns, error
   handling, and API integration, ensuring it serves as the central orchestrator for all functionality
-- Step 4: Add comprehensive error handling using anyhow for all potential failure points while maintaining main function
+- Step 4: Configure parameter validation and UI customization through Windmill's Generated UI interface, setting
+  appropriate formats, constraints, and descriptions for optimal user experience
+- Step 5: Add comprehensive error handling using anyhow for all potential failure points while maintaining main function
   centrality
-- Step 5: Optimize for performance and ensure compliance with Windmill platform constraints, keeping the main function
+- Step 6: Optimize for performance and ensure compliance with Windmill platform constraints, keeping the main function
   as the mandatory entry point
-- Step 6: Validate the complete implementation against Windmill's execution requirements, confirming the main function
-  remains intact and functional
+- Step 7: Validate the complete implementation against Windmill's execution requirements, confirming the main function
+  remains intact and functional with proper parameter validation
 - Expected result: A complete, production-ready Rust script that executes successfully in Windmill with proper error
-  handling, performance optimization, full compliance with platform constraints, and a preserved main function that
-  serves as the UI interface and central processing hub
+  handling, performance optimization, full compliance with platform constraints, well-defined input parameters with
+  appropriate validation, and a preserved main function that serves as the UI interface and central processing hub
 
 ## Initialization
 

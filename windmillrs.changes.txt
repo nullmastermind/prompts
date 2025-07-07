@@ -1,0 +1,63 @@
+# Windmill Rust Script Developer Prompt - Changes Log
+
+## Date: 2025-07-07
+
+### Changes Made:
+
+1. **Added comprehensive "Input Parameter Definitions" section** (Lines 118-298)
+   - Detailed explanation of JSON Schema integration in Windmill
+   - Complete Rust type mapping to JSON Schema types table
+   - Required vs Optional parameters using Option<T>
+   - Advanced parameter settings for different types (String, Numeric, Array, Object)
+   - Special Windmill types and formats
+   - Dynamic Select parameters implementation
+   - Backend schema validation with `// schema_validation` comment
+   - Parameter documentation and defaults best practices
+
+2. **Enhanced Workflows section** (Lines 300-315)
+   - Updated Step 1 to include parameter type considerations
+   - Added Step 4 for parameter validation and UI customization
+   - Renumbered subsequent steps
+   - Enhanced expected result to include parameter validation
+
+### Key Information Added:
+
+#### JSON Schema Integration
+- Windmill uses JSON Schema version 2020-12
+- Parameter names become property names
+- Type annotations generate UI forms and validate inputs
+- Required array determines mandatory parameters
+
+#### Rust Type Mapping
+- Complete mapping table from Rust types to JSON Schema types
+- String, integer, number, boolean, array, object mappings
+- Option<T> for optional parameters
+- serde_json::Value for any type
+
+#### Advanced Settings
+- String: textarea rows, password fields, regex patterns, formats, enums, file uploads
+- Numeric: min/max values, currency formatting
+- Array: different item types (strings, enums, objects, numbers, bytes)
+- Object: resource type integration
+
+#### Special Features
+- Dynamic Select with DynSelect_<name> type and corresponding function
+- Backend schema validation with comment directive
+- Resource integration for API credentials and database connections
+- Special formats: email, hostname, uri, uuid, ipv4, yaml, sql, date-time
+
+#### Best Practices
+- Use doc comments for parameter descriptions
+- Provide sensible defaults with Option<T>.unwrap_or()
+- Enable schema validation for strict type checking
+- Configure UI settings for better user experience
+
+### Impact:
+This addition significantly enhances the prompt by providing developers with comprehensive guidance on:
+- How to properly define input parameters in Windmill Rust scripts
+- Understanding the relationship between Rust types and generated UI
+- Leveraging Windmill's advanced parameter features
+- Creating user-friendly interfaces through proper parameter configuration
+- Implementing validation and error handling for inputs
+
+The information is based on official Windmill documentation and provides practical examples for immediate implementation.
