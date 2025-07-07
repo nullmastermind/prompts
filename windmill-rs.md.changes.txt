@@ -1,7 +1,7 @@
 Changes made to windmill-rs.md:
 
 Date: 2025-07-07
-Change: Added agent name and agent mode to Profile section
+Change 1: Added agent name and agent mode to Profile section
 
 Details:
 - Added "agent_name: August" to the Profile section
@@ -10,3 +10,13 @@ Details:
 - No other content was modified
 
 Lines affected: 3-16 (Profile section)
+
+Change 2: Added Test Module Guidelines to Rules section
+
+Details:
+- Added new rule section "6. Test Module Guidelines" to the Rules section
+- Includes guidelines for minimal testing approach: create only ONE test function for happy case unless specifically requested
+- Specifies that additional tests should only be added when main function parameters change or when explicitly requested
+- Emphasizes test focus on validating main function's core functionality
+
+Lines affected: 72-86 (Rules section)

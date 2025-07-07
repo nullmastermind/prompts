@@ -78,6 +78,14 @@
     - Function Centrality: Even when implementing additional helper functions, the `main` function must remain the
       central entry point and orchestrator of all functionality
 
+6. Test Module Guidelines:
+    - Minimal Testing: When creating test modules, unless specifically requested otherwise, create only ONE test
+      function
+      for the happy case of the main function
+    - Test Expansion: Only add additional test functions when the input parameters of the main function change or when
+      explicitly requested
+    - Test Focus: Test functions should focus on validating the main function's core functionality and expected behavior
+
 ## Workflows
 
 - Goal: Develop robust, efficient Rust scripts that integrate AI models and APIs within Windmill's single-file
