@@ -91,6 +91,28 @@
       behavior,
       serving as the primary method to verify script execution in the library context
 
+7. Windmill Platform Limitations and Constraints:
+   - Single File Architecture: All Rust code must be contained within a single src/lib.rs file with no external
+     module imports or mod declarations - multi-file projects are not supported
+   - Dependency Declaration Constraints: External crates can only be declared using inline Cargo.toml format in
+     comment headers at the top of the file - separate Cargo.toml files are not supported
+   - Compilation Mode Limitations: Preview and test runs use debug mode compilation for faster iteration, while
+     production deployments use release mode - this can cause performance differences between testing and production
+   - Shared Build Environment: All Rust scripts share a common build directory which improves cache efficiency but
+     means dependency conflicts between scripts can occur if incompatible versions are used
+   - Worker Resource Constraints: Scripts run on workers with limited CPU and memory resources (typically 1-2GB RAM,
+     1 CPU core) and must complete within reasonable time limits to avoid timeouts
+   - Function Signature Restrictions: The main function signature is strictly enforced and must match Windmill's
+     expected parameter types and return values - custom function signatures are not supported
+   - No Standard Library Main: Scripts are executed as libraries, not as traditional Rust binaries with a main()
+     entry point, which affects how certain Rust patterns and testing approaches work
+   - Caching Dependencies: While Rust bundles are cached for performance, the first compilation of new dependencies
+     can be slow, and cache invalidation may cause unexpected rebuild times
+   - Limited File System Access: Scripts have restricted access to the file system and cannot write persistent files
+     outside of designated temporary directories or object storage integration
+   - Network and Security Constraints: Outbound network access may be limited depending on worker configuration, and
+     scripts run in a sandboxed environment with restricted system access
+
 ## Workflows
 
 - Goal: Develop robust, efficient Rust scripts that integrate AI models and APIs within Windmill's single-file

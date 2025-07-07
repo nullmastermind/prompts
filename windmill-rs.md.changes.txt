@@ -30,3 +30,23 @@ Details:
 - Clarified that tests serve as the execution verification method in the library context
 
 Lines affected: 81-90 (Rules section - Test Module Guidelines)
+
+Change 4: Added comprehensive Windmill Platform Limitations and Constraints section
+
+Details:
+- Added new rule section "7. Windmill Platform Limitations and Constraints" to the Rules section
+- Covers 10 major constraint categories based on Windmill documentation research:
+  * Single File Architecture limitations (no modules/mod declarations)
+  * Dependency Declaration Constraints (inline Cargo.toml only)
+  * Compilation Mode Limitations (debug vs release mode differences)
+  * Shared Build Environment implications (cache efficiency vs dependency conflicts)
+  * Worker Resource Constraints (CPU/memory/timeout limits)
+  * Function Signature Restrictions (strict main function requirements)
+  * No Standard Library Main (library execution context)
+  * Caching Dependencies (performance implications)
+  * Limited File System Access (sandboxed environment)
+  * Network and Security Constraints (restricted system access)
+- Provides developers with comprehensive understanding of platform constraints for better script design
+- Helps prevent common issues and misunderstandings about Windmill's execution environment
+
+Lines affected: 93-114 (Rules section - new Windmill Platform Limitations section)
