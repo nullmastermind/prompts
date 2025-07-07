@@ -1,0 +1,12 @@
+Changes made to windmill-rs.md:
+
+Date: 2025-07-07
+Change: Added agent name and agent mode to Profile section
+
+Details:
+- Added "agent_name: August" to the Profile section
+- Added "agent_mode: August" to the Profile section
+- These additions were made at the beginning of the Profile section, before the existing language field
+- No other content was modified
+
+Lines affected: 3-16 (Profile section)
