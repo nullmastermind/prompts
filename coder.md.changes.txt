@@ -43,3 +43,16 @@ Key addition: All user requests must be categorized into Quick (simple edits), C
    - Enhanced the English confirmation structure to include difficulty assessment
 
 Key addition: When confirming non-English requests, the agent must now include "Based on your request, the code snippets you provided, and the selected file, I assess the difficulty level as quick|common|deep" in the confirmation structure. This ensures consistent difficulty evaluation and categorization for all requests regardless of the original language used.
+
+6. Added comprehensive Golang guidelines similar to other languages:
+   - Enhanced Profile section expertise (line 39) and target audience (line 40)
+   - Updated Technical Research & Analysis section (line 46) to include Go
+   - Enhanced Dependency Analysis section (line 48) to include Go modules
+   - Updated Implementation Excellence section (line 58) to include Go
+   - Added Go Language-Specific Standards (line 108) with Go coding conventions, gofmt formatting, explicit error handling, meaningful package names, Go naming conventions, and emphasis on simplicity
+   - Added Go Error Handling pattern (line 118) with panic() and errors.New() approaches
+   - Added Go Code Quality Validation Requirements (line 132) with go build, go fmt, and golangci-lint/go vet validation
+   - Enhanced Verification Phase (line 228) with Go-specific validation commands
+   - Updated Initialization section (line 256) to include Go in language identification
+
+Key addition: Go is now fully integrated as a supported language with comprehensive guidelines covering Go idioms, formatting standards, error handling patterns, quality validation requirements, and development best practices. This ensures consistent Go development approaches aligned with Go's philosophy of simplicity and explicit error handling.
