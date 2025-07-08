@@ -154,3 +154,153 @@ Details:
 - Provides clear guidelines for test versioning that parallel function versioning in development workflows
 
 Lines affected: 81-98 (Rules section - Test Module Guidelines enhancement)
+
+Change 8: Major Multi-Language Expansion
+
+Date: 2025-07-08
+
+Details:
+- Completely transformed the prompt from Rust-specific to multi-language support covering TypeScript Node.js, Python, Golang, and Rust
+- This represents the most significant update to the prompt, expanding its scope and utility dramatically
+
+Major sections updated:
+
+1. Role and Profile Section (Lines 1-16):
+   - Changed title from "Windmill Rust Script Developer" to "Windmill Multi-Language Script Developer"
+   - Updated description to include TypeScript Node.js, Python, Golang, and Rust
+   - Expanded expertise to cover all four languages and cross-language integration patterns
+   - Enhanced background to include multiple runtime environments
+
+2. Skills Section Complete Rewrite (Lines 18-69):
+   - Added dedicated subsections for each language:
+     * TypeScript Node.js Development (async/await, Bun runtime, npm/yarn/pnpm)
+     * Python Development (asyncio, pandas/numpy, pip/poetry, pydantic)
+     * Golang Development (goroutines, channels, go modules, performance)
+     * Rust Development (tokio, memory safety, Cargo ecosystem)
+   - Enhanced Windmill Platform Expertise to cover multi-language support
+   - Updated Serverless and API Integration for language-specific HTTP clients
+   - Maintained AI Tool Integration with cross-language considerations
+
+3. Rules Section Major Expansion (Lines 71-195):
+   - Transformed Code Architecture Principles to be language-agnostic with language selection guidance
+   - Added comprehensive Language-Specific Development Best Practices for each language
+   - Updated Universal Windmill Platform Constraints while adding language-specific constraint sections
+   - Enhanced Performance and Security Guidelines with language-specific recommendations
+   - Updated Test Module Guidelines to include language-specific testing approaches
+   - Expanded Windmill Platform Limitations to cover all four languages with detailed constraints
+
+4. Input Parameter Definitions Complete Overhaul (Lines 197-707):
+   - Added comprehensive type mapping tables for all four languages
+   - Provided multi-language examples for required vs optional parameters
+   - Updated Advanced Parameter Settings to be language-agnostic
+   - Created multi-language examples for Special Windmill Types
+   - Added language-specific Dynamic Select Parameters examples
+   - Included multi-language Backend Schema Validation examples
+   - Enhanced Parameter Documentation with language-appropriate patterns
+
+5. Best Practices Section Transformation (Lines 709-840):
+   - Made all practices applicable across languages while maintaining language-specific guidance
+   - Added language-specific documentation patterns and dependency management
+   - Enhanced AI Assistant Integration with language selection guidance
+   - Updated Error Handling and Performance Optimization with language-specific approaches
+   - Maintained universal security practices while adding language-specific implementations
+   - Enhanced Testing and Development with language-specific testing frameworks
+
+6. Workflows Section Complete Redesign (Lines 842-893):
+   - Added language selection as the first critical step
+   - Made all workflow steps language-agnostic while providing language-specific implementation guidance
+   - Enhanced each step with multi-language considerations and best practices
+   - Updated expected results to cover all supported languages
+
+7. Initialization Section Update (Lines 895-897):
+   - Updated role from "Rust Script Developer" to "Multi-Language Script Developer"
+   - Added emphasis on language selection and cross-language compatibility
+
+Technical Implementation Details:
+- Maintained backward compatibility for existing Rust-focused usage
+- Added comprehensive language-specific examples and patterns
+- Ensured all code examples follow language conventions and best practices
+- Integrated Windmill platform constraints for each language runtime
+- Preserved the core structure and principles while dramatically expanding scope
+
+Impact:
+- Transforms the prompt from single-language to comprehensive multi-language support
+- Enables AI to write high-quality scripts in TypeScript Node.js, Python, Golang, and Rust
+- Provides language selection guidance based on requirements and use cases
+- Maintains all existing Rust capabilities while adding three additional languages
+- Significantly increases the prompt's utility and applicability for diverse development scenarios
+
+Lines affected: Entire file (1-897) - comprehensive multi-language transformation
+
+Change 9: Research-Based Validation and Critical Corrections
+
+Date: 2025-07-08
+
+Details:
+- Conducted comprehensive web research using official Windmill documentation to validate and enhance the multi-language prompt
+- Identified and corrected several critical inaccuracies in the initial multi-language expansion
+- Updated prompt with current, accurate information based on official Windmill documentation
+
+Major Research Findings and Corrections:
+
+1. **Critical Runtime Correction**:
+   - CORRECTED: Changed "TypeScript Node.js" to "TypeScript (Bun Runtime)" throughout the document
+   - FINDING: Windmill primarily uses Bun as the TypeScript runtime, not Node.js directly
+   - Node.js compatibility is available via `//nodejs` comment but is not the primary runtime
+   - Updated all references to reflect Bun as the primary TypeScript runtime
+
+2. **Language Name Standardization**:
+   - CORRECTED: Changed "Golang" to "Go" throughout the document to match official documentation
+   - FINDING: Official Windmill documentation consistently uses "Go" not "Golang"
+
+3. **Dependency Management Accuracy**:
+   - CORRECTED: TypeScript (Bun) dependencies are automatically resolved from imports, not comment headers
+   - CORRECTED: Python dependencies are automatically resolved from top-level imports only
+   - CORRECTED: Go dependencies use `//require` comments for version pinning
+   - CORRECTED: Rust uses specific partial Cargo.toml format in comment headers
+   - FINDING: Each language has distinct dependency management approaches
+
+4. **Type Mapping Enhancements**:
+   - ADDED: Missing TypeScript types like `bigint`, `wmill.Base64`, `wmill.Email`, `wmill.Sql`
+   - ADDED: Missing Python types like `Literal`, `bytes`, `datetime`
+   - ADDED: Go struct with json tags for object mapping
+   - CORRECTED: More accurate type descriptions based on official documentation
+
+5. **Runtime and Performance Details**:
+   - ADDED: Bun pre-bundling information for TypeScript
+   - ADDED: Go package structure requirements (`package inner`)
+   - ADDED: Rust compilation mode differences (debug vs release)
+   - CORRECTED: Performance optimization strategies specific to each runtime
+
+6. **Platform Constraints Accuracy**:
+   - CORRECTED: TypeScript uses ES6 imports, not comment headers for dependencies
+   - CORRECTED: Python import detection limited to top-level imports only
+   - CORRECTED: Go requires `package inner` declaration
+   - CORRECTED: Rust includes serde by default
+
+7. **Testing Framework Updates**:
+   - ADDED: Bun's built-in test runner for TypeScript
+   - CORRECTED: Language-specific testing approaches based on current capabilities
+
+8. **Documentation Standards**:
+   - CORRECTED: All language references to use official naming conventions
+   - UPDATED: Best practices to reflect current Windmill capabilities
+   - ENHANCED: Examples with accurate syntax and patterns
+
+Research Sources Validated:
+- Official Windmill documentation (windmill.dev/docs)
+- TypeScript quickstart guide with Bun runtime details
+- Python quickstart with import handling specifics
+- Go quickstart with package structure requirements
+- Rust quickstart with dependency declaration format
+- JSON Schema and type mapping documentation
+- Dependency management and imports documentation
+
+Impact of Corrections:
+- Ensures prompt accuracy with current Windmill platform capabilities
+- Prevents AI from generating incorrect dependency management code
+- Provides accurate runtime-specific optimization guidance
+- Aligns all examples with official Windmill documentation
+- Eliminates potential confusion between Node.js and Bun runtime usage
+
+Lines affected: Multiple sections throughout the document (1-904) - research-based accuracy improvements
