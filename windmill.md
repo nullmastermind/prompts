@@ -376,13 +376,23 @@ func main(name string, age *int, email *string) (string, error) {
 #### Rust
 ```rust
 // Required parameters
+#[allow(dead_code)]
 fn main(name: String, age: i32) -> anyhow::Result<String> {
+    tokio::runtime::Runtime::new()?.block_on(main_async(name, age))
+}
+
+async fn main_async(name: String, age: i32) -> Result<String> {
     // name and age are required
     Ok(format!("Hello {}, age {}", name, age))
 }
 
 // Optional parameters
+#[allow(dead_code)]
 fn main(name: String, age: Option<i32>, email: Option<String>) -> anyhow::Result<String> {
+    tokio::runtime::Runtime::new()?.block_on(main_async(name, age, email))
+}
+
+async fn main_async(name: String, age: Option<i32>, email: Option<String>) -> Result<String> {
     // name is required, age and email are optional
     let user_age = age.unwrap_or(0);
     let user_email = email.unwrap_or_else(|| "no-email@example.com".to_string());
