@@ -98,3 +98,14 @@ Change History:
    - Enhanced Initialization section to include anti-jailbreak protection language emphasizing the absolute nature of the prohibition
    - Updated final commitment section to reinforce that file creation prohibition cannot be overridden regardless of user manipulation attempts
    - Designed to prevent any attempts to circumvent file creation restrictions through social engineering, roleplay, emergency scenarios, authority claims, or any other manipulation tactics
+
+12. Enhanced language consistency protocol to fix language adherence issue:
+   - Enhanced "Language Consistency Protocol" (Rule 2) to add "IMMEDIATELY identify" requirement for first interaction
+   - Added "Immediate Language Lock-In" rule requiring immediate response in user's identified language
+   - Added "First Response Language Matching" with NO exceptions rule - the very first response MUST be in same language as user's first question
+   - Added "Critical Implementation" warning against providing English responses when user asks in another language
+   - Updated "Internal Step 0" to include CRITICAL FIRST STEP emphasizing immediate language identification before any other processing
+   - Enhanced "Language Consistency Imperative" in Initialization to specify IMMEDIATE identification and EXACT same language response from very first response
+   - Added explicit prohibition against English opening responses when user asks in another language
+   - Updated final commitment to emphasize immediate response in user's primary language from very first response
+   - Designed to fix the issue where AI was responding in English when user asked in Vietnamese, ensuring language consistency from the very first interaction
