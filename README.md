@@ -18,10 +18,20 @@ Create a `compose.yaml` file with the following content:
 
 ```yaml
 services:
+  augment-request-parser:
+    container_name: augment-request-parser
+    image: nullmastermind/augment-request-parser
+    pull_policy: always
+    restart: unless-stopped
+    expose:
+      - 8863
+
   augment-proxy:
-    image: "nullmastermind/augment-proxy:latest"
+    image: "nullmastermind/augment-prompt-proxy:latest"
     ports:
       - '${PROXY_PORT:-8864}:8080'
+    environment:
+      - REQUEST_PARSET_BASE_URL=http://augment-request-parser:8863
     restart: unless-stopped
     pull_policy: always
 ```
@@ -35,19 +45,13 @@ services:
 4. Remove the proxy from your browser, then configure it in your VSCode or JetBrains IDE
 5. Restart your VSCode or JetBrains IDE
 
-#### 2. Install the Automatic Prompt Tool
+#### 2. Prompt Setup
 
-```shell
-npm i -g @dccxx/aug
-```
+Go to 'Augment Memories' to set up the prompt using the syntax:
 
-**Command to add prompts:**
+$(prompt_name)
 
-```shell
-aug prompt_name
-```
-
-**Examples:** `aug coder`, `aug research`, etc. - these are the names of the .md files available in this repository.
+For example, if you want to use the research.md prompt, go to Augment Memories and add `$(research)`
 
 ### Why Use a Proxy?
 
@@ -82,19 +86,13 @@ services:
 4. Bỏ proxy khỏi trình duyệt, sau đó thiết lập proxy đó vào VSCode hoặc JetBrains của bạn
 5. Khởi động lại VSCode hoặc JetBrains của bạn
 
-#### 2. Tải Tool Tự Động Thêm Prompt
+#### 2. Thiết Lập Prompt
 
-```shell
-npm i -g @dccxx/aug
-```
+Vào 'Augment Memories' để thiết lập prompt sử dụng bằng cú pháp:
 
-**Lệnh thêm prompt:**
+$(prompt_name)
 
-```shell
-aug prompt_name
-```
-
-**Ví dụ:** `aug coder`, `aug research`, v.v. - đây là tên các file .md có trong repository này.
+ví dụ muốn sử dụng prompt research.md thì vào Augement Memories và thêm `$(research)`
 
 ### Tại Sao Cần Proxy?
 
