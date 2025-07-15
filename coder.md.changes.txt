@@ -56,3 +56,14 @@ Key addition: When confirming non-English requests, the agent must now include "
    - Updated Initialization section (line 256) to include Go in language identification
 
 Key addition: Go is now fully integrated as a supported language with comprehensive guidelines covering Go idioms, formatting standards, error handling patterns, quality validation requirements, and development best practices. This ensures consistent Go development approaches aligned with Go's philosophy of simplicity and explicit error handling.
+
+7. Added comprehensive Behavior Trees in YAML format for code modification workflows:
+   - Added new "Behavior Trees for Code Modification Workflows" section (lines 166-629)
+   - Created 5 comprehensive Behavior Trees covering different coding scenarios:
+     * Core Code Analysis and Modification Workflow - Maps the complete process from request categorization through safety protocols to implementation
+     * Feature Development Workflow - Detailed tree for new feature development including analysis, design, confirmation, and implementation phases
+     * Debugging and Issue Resolution Workflow - Systematic approach to debugging with UI flow debugging, code logic debugging, and performance issue resolution
+     * Code Refactoring Workflow - Structured refactoring process with analysis, strategy design, implementation, and validation phases
+     * Integration and Deployment Workflow - Safe integration process with pre-integration analysis, implementation, testing, and deployment strategy
+
+Key addition: Each Behavior Tree follows proper YAML syntax with clear node types (Selector, Sequence, Condition, Action), descriptive names, relevant parameters with realistic values, and clear parent-child relationships showing logical flow. These trees serve as visual roadmaps that inform users about the step-by-step code implementation process before any actual coding begins, making the coding approach transparent and predictable. The trees demonstrate decision points for different implementation approaches, error handling strategies, edge case management, testing and validation steps, and rollback or alternative solution paths.
