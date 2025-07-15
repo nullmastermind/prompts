@@ -69,10 +69,20 @@ Tạo file `compose.yaml` với nội dung sau:
 
 ```yaml
 services:
+  augment-request-parser:
+    container_name: augment-request-parser
+    image: nullmastermind/augment-request-parser
+    pull_policy: always
+    restart: unless-stopped
+    expose:
+      - 8863
+
   augment-proxy:
-    image: "nullmastermind/augment-proxy:latest"
+    image: "nullmastermind/augment-prompt-proxy:latest"
     ports:
       - '${PROXY_PORT:-8864}:8080'
+    environment:
+      - REQUEST_PARSET_BASE_URL=http://augment-request-parser:8863
     restart: unless-stopped
     pull_policy: always
 ```
