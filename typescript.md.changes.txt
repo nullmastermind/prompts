@@ -1,0 +1,21 @@
+Removed non-TypeScript rules and focused on TypeScript ecosystem only
+
+Changes made:
+- Updated role from "Software Development Assistant" to "TypeScript Development Assistant"
+- Removed request categorization system (Quick/Common/Deep levels) as it was generic
+- Focused profile and skills on TypeScript, Node.js, React, Vue.js, Deno, and related technologies
+- Removed references to other programming languages (C#, Rust, C++, Python, Java, Go)
+- Removed generic programming rules not specific to TypeScript ecosystem
+- Kept TypeScript-specific rules:
+  - TypeScript standards (use 'type' over 'interface')
+  - npm package management
+  - Tailwind CSS priority for UI styling
+  - Vue/React state management (no setTimeout)
+  - Development server restrictions (no npm run dev/build)
+  - Type checking validation requirements
+  - UI flow debugging protocols
+- Simplified behavior trees to single TypeScript-focused workflow
+- Updated workflows to be TypeScript-specific
+- Removed language-specific validation for non-TypeScript languages
+- Maintained core safety protocols and mandatory behavior tree requirements
+- Focused initialization on TypeScript development only
