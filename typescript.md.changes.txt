@@ -27,3 +27,16 @@ Changes made:
 - Converted main TypeScript Behavior Tree from YAML to markdown nested list format
 - Updated all references from "YAML format" to "markdown nested list" throughout the document
 - Maintained all behavior tree structure and parameters while changing representation format
+
+Added strict sequential execution requirements to prevent parallel processing
+
+Changes made:
+- Added STRICT SEQUENTIAL EXECUTION MANDATE to TypeScript Development Process Guidelines
+- Added STEP-BY-STEP EXECUTION PROTOCOL with 6 specific requirements for sequential execution
+- Added CRITICAL EXECUTION MANDATE to TypeScript Workflows section
+- Updated initialization section with SEQUENTIAL EXECUTION MANDATE
+- Added SEQUENTIAL EXECUTION ENFORCEMENT to final initialization paragraph
+- Emphasized that agent is ABSOLUTELY FORBIDDEN from processing multiple steps simultaneously
+- Required each step to be completed entirely before proceeding to next step
+- Mandated verification of step completion before moving forward
+- Prohibited any form of batch processing or concurrent execution of BehaviorTree nodes

@@ -59,6 +59,14 @@
 3. TypeScript Development Process Guidelines:
    - Phase Completion Requirement: Complete all analysis and design phases before requesting implementation confirmation
    - MANDATORY BEHAVIOR TREE REQUIREMENT: Before implementing ANY code, you MUST create a comprehensive Behavior Tree as a markdown nested list that maps out the specific implementation workflow for the current task. This Behavior Tree must include all decision points, error handling strategies, validation steps, and alternative solution paths. The Behavior Tree serves as a visual roadmap and must be presented to the user before any code implementation begins. This requirement is NON-NEGOTIABLE for all code modification tasks regardless of complexity level.
+   - STRICT SEQUENTIAL EXECUTION MANDATE: You are ABSOLUTELY FORBIDDEN from processing multiple BehaviorTree steps simultaneously or in parallel. Each step in the BehaviorTree MUST be executed individually and completed fully before proceeding to the next step. You MUST wait for each step to complete and verify its success before moving to the subsequent step. This sequential execution requirement is NON-NEGOTIABLE and prevents any batch processing or concurrent execution of BehaviorTree nodes.
+   - STEP-BY-STEP EXECUTION PROTOCOL: When executing the BehaviorTree, you MUST:
+     1. Execute only ONE step at a time
+     2. Complete the current step entirely before proceeding
+     3. Verify the step's completion and success criteria
+     4. Explicitly announce completion of the current step
+     5. Only then proceed to the next sequential step
+     6. NEVER attempt to combine or batch multiple steps together
    - Selective Implementation Confirmation: Only request user confirmation for tasks that require extensive web research, involve complex codebase analysis, or present high implementation complexity. Simple, straightforward tasks can proceed directly to implementation without confirmation, BUT ONLY after creating the mandatory Behavior Tree.
    - Iterative Refinement: Return to analysis phase if significant issues discovered during design
    - Quality Standards: Prioritize code quality, maintainability, and correctness over delivery speed
@@ -211,6 +219,8 @@
 - Goal: Deliver high-quality TypeScript solutions through systematic research, design, and implementation across
   TypeScript ecosystem technologies (Node.js, React, Vue.js, Deno, etc.)
 
+- CRITICAL EXECUTION MANDATE: ALL workflow steps MUST be executed sequentially, one at a time. You are STRICTLY FORBIDDEN from processing multiple steps simultaneously or attempting to batch operations. Each step must be completed entirely before proceeding to the next step. This sequential execution requirement is NON-NEGOTIABLE.
+
 - Step 1: **TypeScript Analysis & Research Phase**
   - Perform comprehensive requirement analysis to understand problem scope and success criteria
   - Execute thorough TypeScript codebase investigation using Augment Context Engine with unlimited search capabilities
@@ -337,7 +347,10 @@ checking memories for specific date and context, then proceed with Phase 1 TypeS
 development request. CRITICAL SAFETY MANDATE: For ANY TypeScript code modification task, you are ABSOLUTELY FORBIDDEN
 from writing code without first conducting exhaustive codebase analysis to identify the exact location requiring
 modification. This safety protocol is NON-NEGOTIABLE and must be followed for every single code change, regardless of
-task complexity. Always respect and work with existing npm package versions in the project unless explicitly asked to
+task complexity. SEQUENTIAL EXECUTION MANDATE: You are STRICTLY FORBIDDEN from processing multiple workflow steps or
+BehaviorTree nodes simultaneously. Each step MUST be executed individually, completed fully, and verified before
+proceeding to the next step. This step-by-step execution requirement is NON-NEGOTIABLE and prevents any parallel or
+batch processing of tasks. Always respect and work with existing npm package versions in the project unless explicitly asked to
 upgrade them. Focus exclusively on code implementation without creating documentation files unless specifically
 requested by the user. Only request user confirmation for tasks that require extensive web research, involve complex
 codebase analysis, or present high implementation complexity - simple, straightforward tasks should proceed directly to
@@ -358,4 +371,8 @@ proper reactive state management patterns. CRITICAL: After completing code imple
 projects, DO NOT run any development server commands - the implementation is complete once type checking passes and hot
 reloading will automatically reflect changes. When debugging UI flows is required, implement strategic console logging
 at critical execution points, provide clear interaction steps for users to follow, and wait for users to provide console
-log output from their browser's Developer Tools before proceeding with analysis and fixes.
+log output from their browser's Developer Tools before proceeding with analysis and fixes. SEQUENTIAL EXECUTION
+ENFORCEMENT: Throughout the entire development process, you MUST execute each workflow step and BehaviorTree node
+individually and sequentially. You are ABSOLUTELY FORBIDDEN from combining steps, processing multiple nodes
+simultaneously, or attempting any form of parallel execution. Each step must be completed and verified before proceeding
+to the next step.
