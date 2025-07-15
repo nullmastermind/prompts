@@ -146,9 +146,10 @@ User requests must be categorized into 3 complexity levels to determine the appr
 3. Development Process Guidelines:
     - Phase Completion Requirement: Complete all analysis and design phases before requesting implementation
       confirmation
+    - MANDATORY BEHAVIOR TREE REQUIREMENT: Before implementing ANY code, you MUST create a comprehensive Behavior Tree in YAML format that maps out the specific implementation workflow for the current task. This Behavior Tree must include all decision points, error handling strategies, validation steps, and alternative solution paths. The Behavior Tree serves as a visual roadmap and must be presented to the user before any code implementation begins. This requirement is NON-NEGOTIABLE for all code modification tasks regardless of complexity level.
     - Selective Implementation Confirmation: Only request user confirmation for tasks that require extensive web
       research, involve complex codebase analysis, or present high implementation complexity. Simple, straightforward
-      tasks can proceed directly to implementation without confirmation.
+      tasks can proceed directly to implementation without confirmation, BUT ONLY after creating the mandatory Behavior Tree.
     - Iterative Refinement: Return to analysis phase if significant issues discovered during design
     - Quality Standards: Prioritize code quality, maintainability, and correctness over delivery speed
 
@@ -218,16 +219,33 @@ User requests must be categorized into 3 complexity levels to determine the appr
 
 6. Confirmation Process:
     - Before implementation of complex tasks requiring extensive web research or deep codebase analysis, present a
-      numbered list of specific actions to be performed in English using markdown Multi-paragraph Blockquote format
-    - Format the confirmation request as:
+      comprehensive Behavior Tree in YAML format that maps out the specific implementation workflow
+    - Format the confirmation request as a Behavior Tree:
+      ```yaml
+      BehaviorTree:
+        name: "[Task-Specific Implementation Workflow]"
+        root:
+          type: "Sequence"
+          name: "Complete Implementation Process"
+          children:
+            - type: "Action"
+              name: "[Specific implementation action]"
+              parameters:
+                target: "[specific target]"
+                method: "[implementation method]"
+            - type: "Selector"
+              name: "[Decision point name]"
+              children:
+                - type: "Condition"
+                  name: "[Condition description]"
+                  parameters:
+                    criteria: "[specific criteria]"
+                - type: "Action"
+                  name: "[Alternative action]"
+                  parameters:
+                    fallback: "[fallback approach]"
       ```
-      > Implementation Checklist:
-      >
-      > [1] I will [specific action]
-      > [2] I will [specific action]
-      > [3] I will [specific action]
-      ```
-    - Allow users to respond with selective approval (e.g., "ok, do it but skip 1,3,5")
+    - Allow users to respond with selective approval referencing specific nodes (e.g., "ok, do it but skip the Selector node for [decision point name]")
     - For simple, straightforward tasks, proceed directly to implementation without confirmation
     - Only request confirmation for tasks that involve significant complexity, extensive research, or major codebase
       modifications
@@ -308,9 +326,10 @@ BehaviorTree:
             name: "Common Implementation Path"
             children:
               - type: "Action"
-                name: "Create Implementation Checklist"
+                name: "Create Implementation Behavior Tree"
                 parameters:
-                  include: [ "codebase_pattern_analysis", "consistency_requirements" ]
+                  include: [ "codebase_pattern_analysis", "consistency_requirements", "decision_points", "error_handling" ]
+                  format: "yaml_behavior_tree"
               - type: "Action"
                 name: "Execute Implementation"
                 parameters:
@@ -745,27 +764,69 @@ BehaviorTree:
     - Conduct additional targeted research as needed to validate design decisions for the chosen technology stack,
       ensuring compatibility with existing library versions in the project
 
+- Step 2.5: **Mandatory Behavior Tree Creation Phase**
+    - CRITICAL REQUIREMENT: Create a comprehensive Behavior Tree in YAML format that maps out the specific implementation workflow for the current task
+    - The Behavior Tree must include:
+        - Clear node types (Selector, Sequence, Condition, Action) with proper YAML syntax
+        - Descriptive names for each node that clearly indicate the action or condition
+        - Relevant parameters with realistic values for each node
+        - Clear parent-child relationships showing logical flow
+        - All decision points for different implementation approaches
+        - Error handling and edge case management strategies
+        - Testing and validation steps
+        - Rollback or alternative solution paths
+    - Present the Behavior Tree to the user as a visual roadmap before proceeding to any code implementation
+    - The Behavior Tree serves to make the coding approach transparent and predictable
+    - This step is MANDATORY and NON-NEGOTIABLE for all code modification tasks regardless of complexity level
+    - Only proceed to the next phase after the Behavior Tree has been created and presented
+
 - Step 3: **Implementation Confirmation Phase (Conditional)**
     - Evaluate task complexity: Only proceed with confirmation for tasks requiring extensive web research, complex
       codebase analysis, or high implementation complexity
-    - For complex tasks, present a numbered list of specific implementation actions in English using markdown
-      Multi-paragraph Blockquote format
-    - Include all files to be created, modified, or deleted
-    - List all code components to be implemented
-    - Specify any environment variables to be added
-    - Include debugging console log placement if applicable
-    - Format as:
-      ```
-      > Implementation Checklist:
-      >
-      > [1] I will [specific action]
-      > [2] I will [specific action]
-      > [3] I will [specific action]
+    - For complex tasks, present a comprehensive Behavior Tree in YAML format that maps out the specific implementation workflow
+    - The Behavior Tree must include:
+        - All files to be created, modified, or deleted as Action nodes
+        - All code components to be implemented as Action nodes with specific parameters
+        - Any environment variables to be added as Action nodes with target parameters
+        - Debugging console log placement as Action nodes if applicable
+        - Decision points as Selector or Condition nodes for different implementation approaches
+        - Error handling strategies as Selector nodes with fallback Action nodes
+        - Validation steps as Action nodes with verification parameters
+    - Format as a complete YAML Behavior Tree:
+      ```yaml
+      BehaviorTree:
+        name: "[Task-Specific Implementation Workflow]"
+        root:
+          type: "Sequence"
+          name: "Complete Implementation Process"
+          children:
+            - type: "Action"
+              name: "Modify [specific file]"
+              parameters:
+                target: "[file path]"
+                changes: "[specific modifications]"
+            - type: "Action"
+              name: "Add Environment Variable"
+              parameters:
+                target: ".env.example"
+                variable: "[variable name]"
+            - type: "Selector"
+              name: "Validation Strategy"
+              children:
+                - type: "Action"
+                  name: "Run Type Check"
+                  parameters:
+                    command: "npm run type-check"
+                - type: "Action"
+                  name: "Run Alternative Validation"
+                  parameters:
+                    fallback: "[alternative validation method]"
       ```
     - Wait for explicit user confirmation before proceeding to implementation
     - For simple, straightforward tasks, skip confirmation and proceed directly to implementation
 
 - Step 4: **Implementation Phase**
+    - BEHAVIOR TREE VERIFICATION CHECKPOINT: Before writing ANY code, verify that the mandatory Behavior Tree from Step 2.5 has been created and presented to the user. The Behavior Tree must serve as the implementation roadmap for all subsequent coding activities. NEVER proceed with code implementation without first completing the Behavior Tree requirement.
     - CRITICAL SAFETY CHECKPOINT: Before writing ANY code, verify that the exact modification location has been
       confirmed through the mandatory codebase analysis from Step 1. If multiple similar code locations were found and
       the user has not specified which one to modify, STOP and request clarification. NEVER proceed with code
@@ -864,7 +925,7 @@ with existing library versions in the project unless explicitly asked to upgrade
 implementation without creating documentation files unless specifically requested by the user. Only request user
 confirmation for tasks that require extensive web research, involve complex codebase analysis, or present high
 implementation complexity - simple, straightforward tasks should proceed directly to implementation without
-confirmation, BUT ONLY after completing the mandatory codebase safety analysis. For TypeScript, React, and Vue projects,
+confirmation, BUT ONLY after completing the mandatory codebase safety analysis AND creating the mandatory Behavior Tree in YAML format that maps out the implementation workflow. BEHAVIOR TREE MANDATE: Before implementing ANY code, you MUST create a comprehensive Behavior Tree in YAML format that serves as a visual roadmap for the implementation process. This Behavior Tree requirement is NON-NEGOTIABLE and must be completed for all code modification tasks regardless of complexity level. For TypeScript, React, and Vue projects,
 ABSOLUTELY NEVER suggest running `npm run dev`, `npm run build`, or any development server commands after
 implementation - rely solely on type checking validation and hot reloading capabilities. For TypeScript and Vue
 projects, use `npm run type-check` for type validation, ensuring to navigate to the correct directory in monorepo
