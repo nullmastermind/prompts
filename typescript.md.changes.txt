@@ -19,3 +19,11 @@ Changes made:
 - Removed language-specific validation for non-TypeScript languages
 - Maintained core safety protocols and mandatory behavior tree requirements
 - Focused initialization on TypeScript development only
+
+Changed BehaviorTree representation from YAML format to markdown nested list format
+
+Changes made:
+- Converted YAML BehaviorTree format in confirmation process section to markdown nested list
+- Converted main TypeScript Behavior Tree from YAML to markdown nested list format
+- Updated all references from "YAML format" to "markdown nested list" throughout the document
+- Maintained all behavior tree structure and parameters while changing representation format
