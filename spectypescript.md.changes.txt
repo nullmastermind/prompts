@@ -1,0 +1,80 @@
+Removed non-TypeScript rules and focused on TypeScript ecosystem only
+
+Changes made:
+- Updated role from "Software Development Assistant" to "TypeScript Development Assistant"
+- Removed request categorization system (Quick/Common/Deep levels) as it was generic
+- Focused profile and skills on TypeScript, Node.js, React, Vue.js, Deno, and related technologies
+- Removed references to other programming languages (C#, Rust, C++, Python, Java, Go)
+- Removed generic programming rules not specific to TypeScript ecosystem
+- Kept TypeScript-specific rules:
+  - TypeScript standards (use 'type' over 'interface')
+  - npm package management
+  - Tailwind CSS priority for UI styling
+  - Vue/React state management (no setTimeout)
+  - Development server restrictions (no npm run dev/build)
+  - Type checking validation requirements
+  - UI flow debugging protocols
+- Simplified behavior trees to single TypeScript-focused workflow
+- Updated workflows to be TypeScript-specific
+- Removed language-specific validation for non-TypeScript languages
+- Maintained core safety protocols and mandatory behavior tree requirements
+- Focused initialization on TypeScript development only
+
+Changed BehaviorTree representation from YAML format to markdown nested list format
+
+Changes made:
+- Converted YAML BehaviorTree format in confirmation process section to markdown nested list
+- Converted main TypeScript Behavior Tree from YAML to markdown nested list format
+- Updated all references from "YAML format" to "markdown nested list" throughout the document
+- Maintained all behavior tree structure and parameters while changing representation format
+
+Added strict sequential execution requirements to prevent parallel processing
+
+Changes made:
+- Added STRICT SEQUENTIAL EXECUTION MANDATE to TypeScript Development Process Guidelines
+- Added STEP-BY-STEP EXECUTION PROTOCOL with 6 specific requirements for sequential execution
+- Added CRITICAL EXECUTION MANDATE to TypeScript Workflows section
+- Updated initialization section with SEQUENTIAL EXECUTION MANDATE
+- Added SEQUENTIAL EXECUTION ENFORCEMENT to final initialization paragraph
+- Emphasized that agent is ABSOLUTELY FORBIDDEN from processing multiple steps simultaneously
+- Required each step to be completed entirely before proceeding to next step
+- Mandated verification of step completion before moving forward
+- Prohibited any form of batch processing or concurrent execution of BehaviorTree nodes
+
+Applied Kiro core specification-driven development principles
+
+Changes made:
+- Transformed role from "TypeScript Development Assistant" to "TypeScript Specification-Driven Development Agent"
+- Updated profile to emphasize specification-driven methodology and "Code without specs is just expensive technical debt" principle
+- Replaced skills with specification-focused capabilities: Requirements Extraction, Technical Specification Design, Structured Implementation Planning, Specification-Driven Implementation
+- Added mandatory 4-phase workflow: Requirements Analysis → Specification Generation → Implementation Planning → Structured Implementation
+- Introduced structured document format requirements: REQUIREMENTS.md, DESIGN.md, TASKS.md with specific templates
+- Enforced "Specification-First, Code-Second" principle with mandatory approval gates between phases
+- Restructured workflow from 8 steps to 7 phases with clear inputs, outputs, and completion criteria
+- Added traceability requirements ensuring every line of code traces back to specific requirements
+- Implemented documentation-first approach with structured specification documents
+- Added mandatory user approval gates for each specification document before proceeding
+- Updated initialization to require "I will apply specification-driven approach..." statement
+- Enforced absolute prohibition on coding without complete specifications
+- Maintained all TypeScript-specific technical requirements while adding specification-driven structure
+
+Integrated Kiro.dev specific features for enhanced specification-driven development
+
+Changes made:
+- Added Kiro-Inspired Features Integration section with Agent Hooks, Steering Files, and EARS notation
+- Enhanced Requirements Extraction with EARS notation (Easy Approach to Requirements Syntax)
+- Integrated Agent Hooks automation for file save events, code changes, and routine TypeScript tasks
+- Added Steering Files integration for persistent project knowledge (product.md, tech.md, structure.md)
+- Updated REQUIREMENTS.md format to include EARS notation: "WHEN [condition] THE SYSTEM SHALL [behavior]"
+- Enhanced DESIGN.md format with sequence diagrams, component interactions, and steering file alignment
+- Upgraded TASKS.md format with real-time status tracking and agent hook automation tasks
+- Modified all workflow phases to include Kiro-specific features:
+  - Phase 1: EARS-Enhanced requirements with steering files integration
+  - Phase 2: Kiro-Enhanced design with sequence diagrams and hook integration planning
+  - Phase 3: Task-driven planning with real-time tracking and automation identification
+  - Phase 5: Automated implementation with hook integration and real-time task updates
+- Added steering file references using #[[file:filename.md]] syntax
+- Implemented task status tracking (Not Started, In Progress, Completed, Blocked)
+- Enhanced traceability to include EARS-formatted requirements
+- Updated starting protocol to "Kiro-inspired specification-driven approach"
+- Maintained all existing TypeScript safety protocols while adding Kiro automation features
