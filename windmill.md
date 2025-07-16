@@ -122,12 +122,14 @@
    - Performance: Optimize for Rust's performance characteristics and zero-cost abstractions
 
 4. Universal Windmill Platform Constraints:
+   - **SINGLE FILE ONLY**: All code MUST be contained within a single file - no separate test files, README.md, or additional modules allowed
    - No Multi-file Modules: Cannot split code across multiple files or use module imports across all languages
    - Inline Dependencies: All external dependencies must be specified in language-appropriate comment header formats
    - Return Type Compliance: Function must return types that can be serialized to JSON for Windmill workflows
    - Parameter Handling: All required parameters must be properly typed and validated according to language conventions
    - Platform Integration: Ensure compatibility with Windmill's execution environment and resource management
    - Specification Compliance: All implemented code must strictly adhere to the approved specification documents
+   - **NO EXTERNAL FILES**: Do not create README.md, separate test files, or any additional files - everything must be in the main script file
 
 5. Specification File Structure and Management:
 
@@ -228,16 +230,17 @@
    - Test Documentation: Include references to specific requirements and design elements being tested
 
    **Test Structure and Organization:**
-   - Create test files in the same specification directory: `/path/to/script/tests/`
-   - Test file naming: `test_requirements.{ts,py,go,rs}` for requirement validation tests
-   - Minimal Testing: When creating test modules, unless specifically requested otherwise, create only ONE test function for the happy case of the main function to verify it executes correctly
+   - **SINGLE FILE TESTING ONLY**: All tests must be included within the main script file using language-appropriate inline testing patterns
+   - **NO SEPARATE TEST FILES**: Do not create separate test files - use inline test functions or test blocks within the main script
+   - Minimal Testing: When creating test functions, unless specifically requested otherwise, create only ONE test function for the happy case of the main function to verify it executes correctly
    - Test Expansion: Only add additional test functions when the input parameters of the main function change or when explicitly requested for more comprehensive testing scenarios
+   - **Inline Test Implementation**: Use language-specific patterns for inline testing (e.g., `if __name__ == "__main__"` in Python, `#[cfg(test)]` in Rust)
 
-   **Language-Specific Testing Approaches:**
-   - **TypeScript (Bun)**: Use Jest, Vitest, or Node.js built-in test runner with appropriate async/await patterns
-   - **Python**: Use pytest, unittest, or built-in testing frameworks with proper async testing for asyncio code
-   - **Go**: Use Go's built-in testing package with `go test` command and appropriate test function naming
-   - **Rust**: Use Rust's built-in test framework with `#[cfg(test)]` modules and `cargo test` command
+   **Language-Specific Inline Testing Approaches:**
+   - **TypeScript (Bun)**: Include test functions within the main script file, use console.log for validation, or conditional test execution blocks
+   - **Python**: Use `if __name__ == "__main__":` block for inline testing with assert statements or simple validation functions
+   - **Go**: Include test functions within the main script file using conditional compilation or simple validation functions
+   - **Rust**: Use `#[cfg(test)]` modules within the same file for inline testing, ensuring tests are part of the single script file
 
    **Versioned Testing Strategy (Universal):**
    - Create new test functions with version suffixes (e.g., `test_main_v2`, `test_main_v3`) for new parameter sets
@@ -1063,15 +1066,17 @@ languages:
   - Use language-specific validation libraries and patterns for robust input handling
   - Ensure parameter configuration matches the interface design specified in DESIGN.md
 
-- **Step 8: Testing and Specification Validation**
-  - Create specification-driven test modules that validate each requirement from REQUIREMENTS.md
+- **Step 8: Testing and Specification Validation (Single File Only)**
+  - **INLINE TESTING ONLY**: Create specification-driven test functions within the main script file that validate each requirement from REQUIREMENTS.md
+  - **NO SEPARATE TEST FILES**: All testing must be implemented within the single script file using language-appropriate inline patterns
   - Implement tests that verify the main function behavior matches the design specifications
   - Use Windmill's instant preview feature to test scripts during development
   - Validate the complete implementation against all specification documents
-  - Ensure all EARS requirements have corresponding test cases that pass
+  - Ensure all EARS requirements have corresponding test cases that pass within the single file
   - Confirm the main function remains intact and functional with proper parameter validation and documentation
 
 - **Expected Result**: A complete, production-ready script in the chosen language that executes successfully in Windmill with:
+  - **SINGLE FILE IMPLEMENTATION**: All code, tests, and functionality contained within one script file only
   - Complete specification documentation (REQUIREMENTS.md, DESIGN.md, TASKS.md) serving as single source of truth
   - Full traceability from business requirements through technical design to implementation tasks
   - **Real-time task tracking**: All tasks in TASKS.md showing `[✅]` Completed status with complete implementation history
@@ -1079,9 +1084,10 @@ languages:
   - Proper error handling, performance optimization, and full compliance with platform constraints and best practices
   - Well-defined input parameters with appropriate validation and documentation that match design specifications
   - Preserved main function that serves as the UI interface and central processing hub
-  - Comprehensive test coverage that validates all EARS requirements
+  - **Inline test coverage**: All EARS requirements validated through tests within the single script file
   - Clear documentation enabling future maintenance and enhancement through specification updates
   - **Task completion audit trail**: TASKS.md file showing progression from `[ ]` → `[🔄]` → `[✅]` for all implemented features
+  - **No external files**: No README.md, separate test files, or additional modules created
 
 ## Initialization
 

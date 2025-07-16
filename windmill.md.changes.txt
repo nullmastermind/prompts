@@ -470,3 +470,65 @@ Impact:
 - Maintains compatibility with existing spec-to-code methodology while adding tracking layer
 
 Lines affected: Multiple sections (144-163, 187-221, 1026-1032, 1045-1058, 1074-1084) - real-time status tracking integration
+
+Change 12: Single File Implementation Enforcement
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the specification to explicitly enforce Windmill's single-file constraint
+- Removed any references that might suggest creating separate files for tests or documentation
+- Clarified that ALL coding must be done within a single script file only
+
+Major clarifications added:
+
+1. Universal Windmill Platform Constraints Enhancement (Lines 124-132):
+   - Added **SINGLE FILE ONLY** constraint emphasizing no separate test files, README.md, or additional modules
+   - Added **NO EXTERNAL FILES** rule explicitly prohibiting creation of README.md, separate test files, or any additional files
+   - Reinforced that everything must be contained in the main script file
+
+2. Test Structure and Organization Update (Lines 232-237):
+   - Changed from creating separate test files to **SINGLE FILE TESTING ONLY**
+   - Added **NO SEPARATE TEST FILES** rule requiring inline test functions or test blocks within main script
+   - Added **Inline Test Implementation** guidance for language-specific inline testing patterns
+
+3. Language-Specific Testing Approaches Revision (Lines 239-243):
+   - Updated from external test runners to **Language-Specific Inline Testing Approaches**
+   - TypeScript (Bun): Include test functions within main script, use console.log or conditional test execution
+   - Python: Use `if __name__ == "__main__":` block for inline testing with assert statements
+   - Go: Include test functions within main script using conditional compilation
+   - Rust: Use `#[cfg(test)]` modules within the same file for inline testing
+
+4. Workflow Step 8 Enhancement (Lines 1069-1076):
+   - Updated to **Testing and Specification Validation (Single File Only)**
+   - Added **INLINE TESTING ONLY** requirement for test functions within main script file
+   - Added **NO SEPARATE TEST FILES** enforcement for all testing implementation
+   - Emphasized that all EARS requirements must have test cases within the single file
+
+5. Expected Results Update (Lines 1078-1090):
+   - Added **SINGLE FILE IMPLEMENTATION** as primary requirement
+   - Added **Inline test coverage** requirement for EARS requirements validation within single script
+   - Added **No external files** explicit prohibition of README.md, separate test files, or additional modules
+
+Technical Implementation Clarifications:
+- All code, tests, and functionality must be contained within one script file
+- No creation of README.md files or separate documentation files
+- No separate test files - all testing must be inline within the main script
+- Use language-appropriate inline testing patterns (conditional blocks, inline functions)
+- Maintain full specification-driven development while respecting single-file constraint
+
+Benefits:
+- Clear alignment with Windmill platform constraints
+- Eliminates confusion about file creation requirements
+- Ensures compliance with Windmill's single-file architecture
+- Maintains specification-driven development within platform limitations
+- Provides clear guidance for inline testing approaches
+
+Impact:
+- Reinforces Windmill platform compliance throughout the specification
+- Prevents creation of unauthorized external files
+- Maintains all specification-driven development benefits within single-file constraint
+- Provides clear guidance for developers familiar with multi-file development patterns
+- Ensures successful deployment and execution within Windmill environment
+
+Lines affected: Multiple sections (124-132, 232-243, 1069-1076, 1078-1090) - single file implementation enforcement
