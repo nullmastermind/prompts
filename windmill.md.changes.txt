@@ -589,3 +589,68 @@ Impact:
 - Ensures tests are properly isolated and follow language best practices
 
 Lines affected: Multiple sections (232-242, 239-309, 311-343) - enhanced language-specific testing conventions
+
+Change 14: Version Consistency and Library Management Enhancement
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the prompt to include comprehensive version consistency checking and library management across all supported languages
+- Added mandatory version checking requirements to ensure library versions match existing project configurations
+- Integrated version consistency into language-specific best practices and workflow processes
+
+Major enhancements added:
+
+1. Language-Specific Best Practices Enhancement (Lines 100-126):
+   - **TypeScript (Bun Runtime)**: Added "Version Consistency: Check package.json for current dependency versions and maintain consistency across imports"
+   - **Python**: Added "Version Consistency: Check requirements.txt or pyproject.toml for current dependency versions and ensure import statements match"
+   - **Go**: Added "Version Consistency: Check go.mod file for current module versions and ensure import statements use consistent versions"
+   - **Rust**: Added "Version Consistency: Check Cargo.toml for current crate versions and ensure dependency declarations match existing versions"
+
+2. Dependency Management Section Major Enhancement (Lines 985-1023):
+   - Added new **Version Consistency Requirements (Universal)** subsection covering:
+     * Always check existing dependency configuration files to determine current library versions
+     * Maintain version consistency across all dependency declarations within the same script
+     * Use the same version that is already specified in the project's dependency management files
+     * When adding new dependencies, ensure compatibility with existing dependency versions
+   - Enhanced each language-specific section with version checking requirements:
+     * TypeScript: Check package.json and maintain consistency with specified versions
+     * Python: Check requirements.txt or pyproject.toml and ensure import statements match
+     * Go: Check go.mod file and maintain consistency with specified versions
+     * Rust: Check existing Cargo.toml and ensure dependency declarations match versions
+
+3. Workflow Step 4 Enhancement (Lines 1148-1153):
+   - Added **Version Consistency Check** as the first requirement in dependency declaration step
+   - Added **Maintain Version Consistency** requirement to use existing project versions
+   - Integrated version checking into the systematic workflow process
+   - Ensures version consistency is checked before any dependency declarations
+
+Technical Implementation Features:
+- Universal version consistency checking across all four supported languages
+- Language-specific configuration file checking (package.json, requirements.txt, go.mod, Cargo.toml)
+- Integration with existing dependency management best practices
+- Workflow-level enforcement of version consistency requirements
+- Compatibility checking between new and existing dependencies
+
+Benefits:
+- **Prevents Version Conflicts**: Ensures all dependencies use consistent versions within the same project
+- **Maintains Project Integrity**: Preserves existing dependency configurations and compatibility
+- **Reduces Deployment Issues**: Prevents version mismatches that could cause runtime errors
+- **Improves Maintainability**: Makes dependency management more predictable and reliable
+- **Supports Team Collaboration**: Ensures all team members use the same dependency versions
+
+Use Cases Addressed:
+- Adding new dependencies to existing projects with established version constraints
+- Maintaining consistency when multiple scripts share common dependencies
+- Preventing accidental version upgrades that could break existing functionality
+- Ensuring compatibility between different parts of a multi-script project
+- Supporting enterprise environments with strict version control requirements
+
+Impact:
+- Transforms dependency management from ad-hoc version selection to systematic version consistency
+- Provides clear guidance for maintaining library version integrity across projects
+- Reduces debugging time related to version conflicts and compatibility issues
+- Supports professional development practices with proper version management
+- Ensures reliable and predictable dependency behavior in Windmill environments
+
+Lines affected: Multiple sections (100-126, 985-1023, 1148-1153) - version consistency and library management enhancement

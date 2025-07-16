@@ -102,24 +102,28 @@
    - Type Safety: Leverage TypeScript's type system and strict mode for compile-time error prevention
    - Runtime: Optimize for Bun's native performance with Node.js compatibility mode when needed
    - Error Handling: Use try-catch blocks and custom error classes for robust error management
+   - Version Consistency: Check package.json for current dependency versions and maintain consistency across imports
 
    **Python:**
    - Async Programming: Use asyncio and async/await for I/O operations when beneficial
    - Type Hints: Include comprehensive type hints for better code clarity and IDE support
    - Error Handling: Implement proper exception handling with custom exception classes
    - Data Processing: Leverage Python's rich ecosystem for data manipulation and analysis
+   - Version Consistency: Check requirements.txt or pyproject.toml for current dependency versions and ensure import statements match
 
    **Go:**
    - Concurrency: Utilize goroutines and channels appropriately for concurrent operations
    - Error Handling: Follow Go's explicit error handling patterns with proper error wrapping
    - Performance: Leverage Go's performance characteristics for compute-intensive tasks
    - Simplicity: Maintain Go's philosophy of simplicity and readability
+   - Version Consistency: Check go.mod file for current module versions and ensure import statements use consistent versions
 
    **Rust:**
    - Async Programming: Utilize tokio runtime for all I/O operations to ensure non-blocking execution
    - Memory Safety: Leverage Rust's ownership system and type safety for zero-cost abstractions
    - Error Handling: Use Result types and anyhow for comprehensive error management
    - Performance: Optimize for Rust's performance characteristics and zero-cost abstractions
+   - Version Consistency: Check Cargo.toml for current crate versions and ensure dependency declarations match existing versions
 
 4. Universal Windmill Platform Constraints:
    - **SINGLE FILE ONLY**: All code MUST be contained within a single file - no separate test files, README.md, or additional modules allowed
@@ -980,29 +984,43 @@ languages:
 
 ### 3. Dependency Management (Language-Specific)
 
+**Version Consistency Requirements (Universal):**
+- Always check existing dependency configuration files to determine current library versions
+- Maintain version consistency across all dependency declarations within the same script
+- Use the same version that is already specified in the project's dependency management files
+- When adding new dependencies, ensure compatibility with existing dependency versions
+
 **TypeScript (Bun Runtime):**
 
 - Dependencies automatically resolved from imports, no comment headers needed
+- Check package.json for current dependency versions before adding imports
 - Leverage Bun's fast package resolution and pre-bundling
 - Use version pinning in imports for critical dependencies (e.g., `'[email protected]'`)
+- Maintain consistency with versions specified in package.json
 
 **Python:**
 
 - Dependencies automatically resolved from top-level imports only
+- Check requirements.txt or pyproject.toml for current dependency versions
 - Use virtual environment isolation provided by Windmill
 - Specify versions in import statements when needed
+- Ensure import statements match versions in requirements.txt
 
 **Go:**
 
 - Dependencies automatically resolved from imports
+- Check go.mod file for current module versions before adding imports
 - Use `//require` comments for version pinning (e.g., `//require rsc.io/quote v1.5.1`)
 - Leverage Go's module system and semantic versioning
+- Maintain consistency with versions specified in go.mod
 
 **Rust:**
 
 - Dependencies declared in comment header using partial Cargo.toml format
+- Check existing Cargo.toml for current crate versions before adding dependencies
 - Use `//! ```cargo\n//! [dependencies]\n//! crate = "version"\n//! ```\n` syntax
 - Leverage Cargo's dependency resolution and feature flags
+- Ensure dependency declarations match versions in Cargo.toml
 
 ### 4. Error Handling and Validation (Language-Specific)
 
@@ -1128,6 +1146,8 @@ languages:
   - Initialize all tasks with `[ ]` Not Started status indicator for real-time tracking
 
 - **Step 4: Dependency Declaration and Architecture Setup**
+  - **Version Consistency Check**: First, examine existing dependency configuration files (package.json, requirements.txt, go.mod, Cargo.toml) to identify current library versions
+  - **Maintain Version Consistency**: Use the same versions that are already specified in the project's dependency management files
   - Identify and declare all necessary dependencies using language-appropriate methods (imports for TypeScript/Python/Go, comment headers for Rust)
   - Follow language-specific dependency management best practices and version specification
   - Ensure all dependencies are compatible with Windmill's execution environment and align with design specifications
