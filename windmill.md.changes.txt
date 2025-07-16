@@ -304,3 +304,96 @@ Impact of Corrections:
 - Eliminates potential confusion between Node.js and Bun runtime usage
 
 Lines affected: Multiple sections throughout the document (1-904) - research-based accuracy improvements
+
+Change 10: Major Transformation to Spec-to-Code Development Methodology
+
+Date: 2025-07-16
+
+Details:
+- Completely transformed the prompt from "vibe coding" approach to structured specification-driven development methodology inspired by Kiro.dev workflow
+- This represents a fundamental paradigm shift from ad-hoc development to systematic spec-to-code processes
+
+Major sections transformed:
+
+1. Role and Profile Section (Lines 1-12):
+   - Changed title from "Windmill Multi-Language Script Developer" to "Windmill Spec-to-Code Multi-Language Script Developer"
+   - Updated description to emphasize spec-driven development and structured specifications
+   - Enhanced background to include specification-driven methodologies, EARS notation, and requirements engineering
+   - Added expertise in spec-driven development, technical architecture documentation, and requirements engineering
+   - Updated target audience to focus on teams requiring structured, specification-driven development over "vibe coding"
+
+2. Skills Section Major Enhancement (Lines 14-79):
+   - Added new primary skill category "Specification-Driven Development" covering:
+     * EARS Notation expertise for writing clear, testable requirements
+     * Requirements Engineering for transforming vague requests into structured requirements
+     * Technical Architecture Documentation for comprehensive design.md files
+     * Task Decomposition for breaking down complex features into discrete tasks
+     * Specification Validation for ensuring completeness before implementation
+   - Enhanced existing language skills to support specification-driven approaches
+   - Added new skill category "Documentation and Project Structure" covering:
+     * Specification File Management for maintaining project specification files
+     * Cross-File Consistency for ensuring alignment between specs and implementation
+     * Version Control Integration for managing specification evolution
+     * Template Creation for reusable specification patterns
+
+3. Rules Section Comprehensive Restructuring (Lines 81-199):
+   - Added new primary rule "Specification-Driven Development Workflow" covering:
+     * Spec-First Approach requiring comprehensive specification documents before coding
+     * EARS Requirements using "WHEN [condition] THE SYSTEM SHALL [behavior]" format
+     * Architecture Documentation with detailed design.md files
+     * Task Decomposition into discrete, trackable tasks
+     * Specification Validation and traceability requirements
+   - Added new rule "Specification File Structure and Management" defining:
+     * File Organization Pattern: `/path/to/script/` directory for each script
+     * Required specification files: REQUIREMENTS.md, DESIGN.md, TASK.md
+     * Specification File Standards with specific formatting requirements
+     * Cross-Reference and Version Control requirements
+   - Enhanced existing rules to incorporate specification compliance requirements
+   - Updated Test Module Guidelines to include specification-driven testing:
+     * Requirements Traceability for mapping tests to EARS requirements
+     * Test Coverage ensuring all requirements have corresponding test cases
+     * Test Documentation with references to specific requirements
+
+4. Workflows Section Complete Redesign (Lines 943-1015):
+   - Transformed from "Multi-Language Development Process" to "Specification-Driven Multi-Language Development Process"
+   - Restructured workflow to follow Kiro.dev-inspired spec-to-code methodology:
+     * Step 1: Requirements Capture using EARS notation
+     * Step 2: Technical Design and Architecture documentation
+     * Step 3: Implementation Planning and Task Decomposition
+     * Step 4: Dependency Declaration aligned with specifications
+     * Step 5: Specification Validation and Approval process
+     * Step 6: Implementation Execution following approved specifications
+     * Step 7: Parameter Validation matching design specifications
+     * Step 8: Testing and Specification Validation with EARS requirement coverage
+   - Updated Expected Result to include complete specification documentation and traceability
+
+5. Initialization Section Update (Lines 1013-1015):
+   - Updated role from "Multi-Language Script Developer" to "Spec-to-Code Multi-Language Script Developer"
+   - Added emphasis on specification-driven workflows and documentation requirements
+   - Included transformation guidance from "vibe coding" to structured development processes
+
+Technical Implementation Details:
+- Maintains backward compatibility while adding structured development layer
+- Introduces systematic approach to requirements capture, design documentation, and implementation planning
+- Provides clear file organization pattern for specification management
+- Ensures traceability from business requirements to implementation
+- Integrates EARS notation for clear, testable requirements
+- Establishes validation checkpoints throughout development process
+
+Methodology Inspiration:
+- Based on Kiro.dev's spec-driven development approach with:
+  * requirements.md for user stories and acceptance criteria in EARS notation
+  * design.md for technical architecture and implementation considerations
+  * tasks.md for detailed implementation plan with discrete tasks
+- Adapted for Windmill platform constraints and multi-language support
+- Maintains focus on single-file script architecture while adding specification layer
+
+Impact:
+- Transforms prompt from supporting ad-hoc "vibe coding" to systematic specification-driven development
+- Enables clear documentation and traceability for complex Windmill script projects
+- Provides structured approach for teams requiring formal development processes
+- Maintains all existing multi-language capabilities while adding specification methodology
+- Bridges gap between business requirements and technical implementation
+- Supports better collaboration between product and engineering teams through structured specifications
+
+Lines affected: Entire file (1-1015) - comprehensive spec-to-code transformation
