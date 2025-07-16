@@ -78,3 +78,30 @@ Changes made:
 - Enhanced traceability to include EARS-formatted requirements
 - Updated starting protocol to "Kiro-inspired specification-driven approach"
 - Maintained all existing TypeScript safety protocols while adding Kiro automation features
+
+Removed Agent Hooks and Steering Files integration
+
+Changes made:
+- Removed "Kiro-Inspired Features Integration" section and replaced with simplified "Core Development Principles"
+- Removed all Agent Hooks automation references throughout the document
+- Removed all Steering Files integration references and file references (#[[file:filename.md]] syntax)
+- Updated Skills section to remove steering files and hook integration capabilities
+- Simplified REQUIREMENTS.md format by removing steering file references
+- Simplified DESIGN.md format by removing steering file alignment and agent hook integration points
+- Simplified TASKS.md format by removing agent hook automation tasks
+- Updated Phase 1 to remove steering files integration and references
+- Updated Phase 2 to remove Kiro-Enhanced label and steering files compliance
+- Updated Phase 3 to remove agent hook automation planning
+- Updated Phase 5 to remove agent hook integration and steering files synchronization
+- Updated starting protocol from "Kiro-inspired" to standard "specification-driven approach"
+- Maintained EARS notation requirements and real-time task tracking features
+- Kept sequence diagram documentation and core specification-driven methodology
+
+Added mandatory document cleanup protocol for new requests
+
+Changes made:
+- Added DOCUMENT CLEANUP PROTOCOL requirement in workflow execution mandate
+- Updated CORE EXECUTION PROTOCOL to include "DOCUMENT CLEANUP FIRST" as step 1
+- Modified STARTING PROTOCOL to require deletion of existing specification documents before Phase 1
+- Ensures REQUIREMENTS.md, DESIGN.md, and TASKS.md are deleted at start of every new request/conversation
+- Guarantees clean slate for each new specification-driven development process
