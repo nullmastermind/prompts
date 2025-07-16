@@ -230,17 +230,83 @@
    - Test Documentation: Include references to specific requirements and design elements being tested
 
    **Test Structure and Organization:**
-   - **SINGLE FILE TESTING ONLY**: All tests must be included within the main script file using language-appropriate inline testing patterns
-   - **NO SEPARATE TEST FILES**: Do not create separate test files - use inline test functions or test blocks within the main script
-   - Minimal Testing: When creating test functions, unless specifically requested otherwise, create only ONE test function for the happy case of the main function to verify it executes correctly
-   - Test Expansion: Only add additional test functions when the input parameters of the main function change or when explicitly requested for more comprehensive testing scenarios
-   - **Inline Test Implementation**: Use language-specific patterns for inline testing (e.g., `if __name__ == "__main__"` in Python, `#[cfg(test)]` in Rust)
+   - **SINGLE FILE TESTING ONLY**: All tests must be included within the main script file using proper language conventions for inline testing
+   - **NO SEPARATE TEST FILES**: Do not create separate test files - use language-appropriate inline test patterns within the main script
+   - **Follow Language Conventions**: Use each language's standard testing conventions within the single file:
+     * **TypeScript**: Conditional test execution blocks or inline test functions
+     * **Python**: `if __name__ == "__main__":` block with assert statements
+     * **Go**: Build tags or conditional compilation for test functions
+     * **Rust**: `#[cfg(test)]` modules with `#[test]` functions
+   - **Minimal Testing**: When creating test functions, unless specifically requested otherwise, create only ONE test function for the happy case of the main function to verify it executes correctly
+   - **Test Expansion**: Only add additional test functions when the input parameters of the main function change or when explicitly requested for more comprehensive testing scenarios
+   - **Proper Test Isolation**: Ensure tests follow language conventions for isolation and don't interfere with main function execution
 
-   **Language-Specific Inline Testing Approaches:**
-   - **TypeScript (Bun)**: Include test functions within the main script file, use console.log for validation, or conditional test execution blocks
-   - **Python**: Use `if __name__ == "__main__":` block for inline testing with assert statements or simple validation functions
-   - **Go**: Include test functions within the main script file using conditional compilation or simple validation functions
-   - **Rust**: Use `#[cfg(test)]` modules within the same file for inline testing, ensuring tests are part of the single script file
+   **Language-Specific Inline Testing Approaches (Following Language Conventions):**
+
+   - **TypeScript (Bun)**: Include test functions within the main script file following these patterns:
+     ```typescript
+     // Main function implementation
+     export async function main(param: string): Promise<string> {
+         return `Hello ${param}`;
+     }
+
+     // Inline test function (conditional execution)
+     if (process.env.NODE_ENV === 'test') {
+         async function testMain() {
+             const result = await main("World");
+             console.assert(result === "Hello World", "Test failed");
+             console.log("✅ Test passed");
+         }
+         testMain();
+     }
+     ```
+
+   - **Python**: Use `if __name__ == "__main__":` block following Python conventions:
+     ```python
+     def main(param: str) -> str:
+         return f"Hello {param}"
+
+     # Inline tests following Python conventions
+     if __name__ == "__main__":
+         # Test the main function
+         result = main("World")
+         assert result == "Hello World", "Test failed"
+         print("✅ Test passed")
+     ```
+
+   - **Go**: Include test functions within the main script using build tags or conditional compilation:
+     ```go
+     func main(param string) (string, error) {
+         return fmt.Sprintf("Hello %s", param), nil
+     }
+
+     // +build test
+     // Inline test function following Go conventions
+     func TestMain(t *testing.T) {
+         result, err := main("World")
+         if err != nil || result != "Hello World" {
+             t.Errorf("Test failed: got %s", result)
+         }
+     }
+     ```
+
+   - **Rust**: Use `#[cfg(test)]` modules within the same file following Rust conventions:
+     ```rust
+     fn main(param: String) -> anyhow::Result<String> {
+         Ok(format!("Hello {}", param))
+     }
+
+     #[cfg(test)]
+     mod tests {
+         use super::*;
+
+         #[test]
+         fn test_main() {
+             let result = main("World".to_string()).unwrap();
+             assert_eq!(result, "Hello World");
+         }
+     }
+     ```
 
    **Versioned Testing Strategy (Universal):**
    - Create new test functions with version suffixes (e.g., `test_main_v2`, `test_main_v3`) for new parameter sets
@@ -248,6 +314,33 @@
    - Ensure older test versions continue to work by providing default values for new optional parameters
    - Use descriptive version naming that reflects the parameter changes (e.g., `test_main_with_auth`, `test_main_extended`)
    - Document parameter evolution in test comments to track functional changes over time
+
+   **Language-Specific Testing Best Practices:**
+
+   - **TypeScript (Bun) Testing Conventions:**
+     * Use conditional execution based on environment variables or command-line arguments
+     * Implement simple assertion functions or use console.assert for validation
+     * Ensure tests don't interfere with normal script execution in Windmill
+     * Example pattern: `if (process.env.RUN_TESTS) { /* test code */ }`
+
+   - **Python Testing Conventions:**
+     * Always use `if __name__ == "__main__":` to ensure tests only run when script is executed directly
+     * Use built-in `assert` statements for simple validation
+     * Import `unittest` or use simple assertion functions within the main block
+     * Ensure tests are isolated and don't affect the main function when imported
+
+   - **Go Testing Conventions:**
+     * Use build tags like `// +build test` to conditionally compile test functions
+     * Follow Go testing package conventions with `func TestXxx(t *testing.T)`
+     * Ensure test functions are properly isolated from main execution
+     * Use `testing.T` parameter for proper test reporting
+
+   - **Rust Testing Conventions:**
+     * Use `#[cfg(test)]` module to ensure tests are only compiled during testing
+     * Follow Rust testing conventions with `#[test]` attribute on test functions
+     * Use `assert_eq!`, `assert!`, and other standard Rust testing macros
+     * Ensure tests have access to private functions through module structure
+     * Example: Tests can call the main function and validate results using standard Rust assertions
 
 10. Windmill Platform Limitations and Constraints (Multi-Language):
 

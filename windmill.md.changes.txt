@@ -532,3 +532,60 @@ Impact:
 - Ensures successful deployment and execution within Windmill environment
 
 Lines affected: Multiple sections (124-132, 232-243, 1069-1076, 1078-1090) - single file implementation enforcement
+
+Change 13: Enhanced Language-Specific Testing Conventions
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the testing guidelines to provide comprehensive examples and best practices for inline testing following proper language conventions
+- Added detailed code examples showing how to implement tests within a single file while adhering to each language's standard testing patterns
+- Clarified that tests should follow language conventions (like #[cfg(test)] in Rust) while remaining in the single file
+
+Major enhancements added:
+
+1. Enhanced Test Structure Guidelines (Lines 232-242):
+   - Added **Follow Language Conventions** requirement with specific patterns for each language
+   - Clarified proper use of TypeScript conditional blocks, Python __main__ blocks, Go build tags, and Rust #[cfg(test)]
+   - Added **Proper Test Isolation** requirement to ensure tests don't interfere with main function execution
+
+2. Comprehensive Language-Specific Examples (Lines 239-309):
+   - **TypeScript (Bun)**: Complete example showing conditional test execution with process.env.NODE_ENV
+   - **Python**: Full example demonstrating proper if __name__ == "__main__": usage with assert statements
+   - **Go**: Example showing build tags and testing.T usage for proper Go testing conventions
+   - **Rust**: Complete example with #[cfg(test)] module and #[test] functions following Rust conventions
+
+3. Language-Specific Testing Best Practices (Lines 317-343):
+   - **TypeScript (Bun) Conventions**: Environment-based conditional execution, console.assert usage, Windmill compatibility
+   - **Python Conventions**: Proper __main__ block usage, assert statements, unittest integration, import isolation
+   - **Go Conventions**: Build tags usage, testing package conventions, proper test isolation, testing.T parameter usage
+   - **Rust Conventions**: #[cfg(test)] module usage, #[test] attributes, standard testing macros, private function access
+
+Technical Implementation Details:
+- All examples show complete, working code patterns that can be directly implemented
+- Each language example follows the standard conventions for that language's testing ecosystem
+- Tests are properly isolated to not interfere with normal Windmill script execution
+- Examples demonstrate how to test the main function while maintaining single-file constraint
+- Patterns ensure tests only run when appropriate (during testing, not during normal execution)
+
+Benefits:
+- **Language Compliance**: Tests follow proper conventions for each programming language
+- **Professional Standards**: Maintains industry-standard testing practices within single-file constraint
+- **Proper Isolation**: Tests don't interfere with normal script execution in Windmill
+- **Developer Familiarity**: Uses patterns developers already know from each language ecosystem
+- **Maintainability**: Standard conventions make tests easier to understand and maintain
+
+Examples Provided:
+- TypeScript: Conditional execution with environment variables and console.assert
+- Python: Standard if __name__ == "__main__": pattern with assert statements
+- Go: Build tags and testing.T usage for proper Go testing
+- Rust: #[cfg(test)] modules with #[test] functions and standard assertions
+
+Impact:
+- Bridges the gap between single-file constraint and proper testing conventions
+- Enables professional-quality testing within Windmill's platform limitations
+- Provides clear, actionable examples for each supported language
+- Maintains specification-driven development quality while respecting platform constraints
+- Ensures tests are properly isolated and follow language best practices
+
+Lines affected: Multiple sections (232-242, 239-309, 311-343) - enhanced language-specific testing conventions
