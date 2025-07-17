@@ -1,3 +1,9 @@
+Nếu chỉ cần prompt mà không muốn qua proxy, có thể tham khảo các file [xxx]compact.md.
+
+If you only need the prompt and don't want to use a proxy, you can refer to the [xxx]compact.md files.
+
+---
+
 # Augment Prompts Collection
 
 A collection of specialized prompts for Augment AI assistant to enhance development workflows and research capabilities.
