@@ -304,3 +304,353 @@ Impact of Corrections:
 - Eliminates potential confusion between Node.js and Bun runtime usage
 
 Lines affected: Multiple sections throughout the document (1-904) - research-based accuracy improvements
+
+Change 10: Major Transformation to Spec-to-Code Development Methodology
+
+Date: 2025-07-16
+
+Details:
+- Completely transformed the prompt from "vibe coding" approach to structured specification-driven development methodology inspired by Kiro.dev workflow
+- This represents a fundamental paradigm shift from ad-hoc development to systematic spec-to-code processes
+
+Major sections transformed:
+
+1. Role and Profile Section (Lines 1-12):
+   - Changed title from "Windmill Multi-Language Script Developer" to "Windmill Spec-to-Code Multi-Language Script Developer"
+   - Updated description to emphasize spec-driven development and structured specifications
+   - Enhanced background to include specification-driven methodologies, EARS notation, and requirements engineering
+   - Added expertise in spec-driven development, technical architecture documentation, and requirements engineering
+   - Updated target audience to focus on teams requiring structured, specification-driven development over "vibe coding"
+
+2. Skills Section Major Enhancement (Lines 14-79):
+   - Added new primary skill category "Specification-Driven Development" covering:
+     * EARS Notation expertise for writing clear, testable requirements
+     * Requirements Engineering for transforming vague requests into structured requirements
+     * Technical Architecture Documentation for comprehensive design.md files
+     * Task Decomposition for breaking down complex features into discrete tasks
+     * Specification Validation for ensuring completeness before implementation
+   - Enhanced existing language skills to support specification-driven approaches
+   - Added new skill category "Documentation and Project Structure" covering:
+     * Specification File Management for maintaining project specification files
+     * Cross-File Consistency for ensuring alignment between specs and implementation
+     * Version Control Integration for managing specification evolution
+     * Template Creation for reusable specification patterns
+
+3. Rules Section Comprehensive Restructuring (Lines 81-199):
+   - Added new primary rule "Specification-Driven Development Workflow" covering:
+     * Spec-First Approach requiring comprehensive specification documents before coding
+     * EARS Requirements using "WHEN [condition] THE SYSTEM SHALL [behavior]" format
+     * Architecture Documentation with detailed design.md files
+     * Task Decomposition into discrete, trackable tasks
+     * Specification Validation and traceability requirements
+   - Added new rule "Specification File Structure and Management" defining:
+     * File Organization Pattern: `/path/to/script/` directory for each script
+     * Required specification files: REQUIREMENTS.md, DESIGN.md, TASK.md
+     * Specification File Standards with specific formatting requirements
+     * Cross-Reference and Version Control requirements
+   - Enhanced existing rules to incorporate specification compliance requirements
+   - Updated Test Module Guidelines to include specification-driven testing:
+     * Requirements Traceability for mapping tests to EARS requirements
+     * Test Coverage ensuring all requirements have corresponding test cases
+     * Test Documentation with references to specific requirements
+
+4. Workflows Section Complete Redesign (Lines 943-1015):
+   - Transformed from "Multi-Language Development Process" to "Specification-Driven Multi-Language Development Process"
+   - Restructured workflow to follow Kiro.dev-inspired spec-to-code methodology:
+     * Step 1: Requirements Capture using EARS notation
+     * Step 2: Technical Design and Architecture documentation
+     * Step 3: Implementation Planning and Task Decomposition
+     * Step 4: Dependency Declaration aligned with specifications
+     * Step 5: Specification Validation and Approval process
+     * Step 6: Implementation Execution following approved specifications
+     * Step 7: Parameter Validation matching design specifications
+     * Step 8: Testing and Specification Validation with EARS requirement coverage
+   - Updated Expected Result to include complete specification documentation and traceability
+
+5. Initialization Section Update (Lines 1013-1015):
+   - Updated role from "Multi-Language Script Developer" to "Spec-to-Code Multi-Language Script Developer"
+   - Added emphasis on specification-driven workflows and documentation requirements
+   - Included transformation guidance from "vibe coding" to structured development processes
+
+Technical Implementation Details:
+- Maintains backward compatibility while adding structured development layer
+- Introduces systematic approach to requirements capture, design documentation, and implementation planning
+- Provides clear file organization pattern for specification management
+- Ensures traceability from business requirements to implementation
+- Integrates EARS notation for clear, testable requirements
+- Establishes validation checkpoints throughout development process
+
+Methodology Inspiration:
+- Based on Kiro.dev's spec-driven development approach with:
+  * requirements.md for user stories and acceptance criteria in EARS notation
+  * design.md for technical architecture and implementation considerations
+  * tasks.md for detailed implementation plan with discrete tasks
+- Adapted for Windmill platform constraints and multi-language support
+- Maintains focus on single-file script architecture while adding specification layer
+
+Impact:
+- Transforms prompt from supporting ad-hoc "vibe coding" to systematic specification-driven development
+- Enables clear documentation and traceability for complex Windmill script projects
+- Provides structured approach for teams requiring formal development processes
+- Maintains all existing multi-language capabilities while adding specification methodology
+- Bridges gap between business requirements and technical implementation
+- Supports better collaboration between product and engineering teams through structured specifications
+
+Lines affected: Entire file (1-1015) - comprehensive spec-to-code transformation
+
+Change 11: Real-Time Task Status Tracking System Implementation
+
+Date: 2025-07-16
+
+Details:
+- Added comprehensive real-time task status tracking system to enhance project visibility and accountability
+- Implemented mandatory status indicators and immediate update requirements for all development tasks
+- Integrated status tracking into existing spec-to-code workflow methodology
+
+Major enhancements added:
+
+1. Real-Time Task Status Tracking System (Lines 154-163):
+   - Added mandatory status indicators section to Specification File Standards
+   - Defined four standardized status indicators:
+     * `[ ]` Not Started - Task has not been initiated
+     * `[🔄]` In Progress - Task is currently being worked on
+     * `[✅]` Completed - Task has been successfully finished
+     * `[🚫]` Blocked - Task cannot proceed due to dependencies or issues
+   - Established immediate status update requirements with announcement protocols
+   - Implemented status tracking enforcement and progress visibility requirements
+
+2. Dedicated Task Management Section (Lines 187-221):
+   - Added comprehensive "Task Management and Real-Time Status Tracking" rule section
+   - Detailed status indicator definitions with specific use cases and required actions
+   - Established status update protocol with mandatory announcements:
+     * Starting Task: "Starting task: [task number] - [task description]"
+     * Completing Task: "Completed task: [task number] - [task description]"
+     * Blocking Task: "Blocked task: [task number] - [blocking issue] - [resolution plan]"
+   - Defined task documentation standards including status tracking requirements
+
+3. Workflow Integration (Lines 1026-1032):
+   - Enhanced Step 3 (Implementation Planning) to include status indicator initialization
+   - Required all tasks to start with `[ ]` Not Started status indicator
+   - Added real-time tracking requirements to task decomposition process
+
+4. Implementation Execution Enhancement (Lines 1045-1058):
+   - Transformed Step 6 to "Implementation Execution with Real-Time Status Tracking"
+   - Added mandatory status update requirements before starting each task
+   - Implemented real-time progress tracking during implementation
+   - Required immediate completion updates and blocking issue management
+   - Integrated status tracking with existing implementation patterns
+
+5. Expected Results Update (Lines 1074-1084):
+   - Enhanced expected results to include real-time task tracking requirements
+   - Added requirement for all tasks showing `[✅]` Completed status
+   - Included status tracking compliance evidence requirement
+   - Added task completion audit trail showing progression from `[ ]` → `[🔄]` → `[✅]`
+
+Technical Implementation Features:
+- Standardized status indicator system for consistent tracking across all projects
+- Mandatory real-time updates preventing delayed or batched status changes
+- Clear announcement protocols for transparency and communication
+- Blocking issue management with resolution planning requirements
+- Integration with existing TASKS.md file structure
+- Audit trail capability for project management and accountability
+
+Benefits:
+- Immediate visibility into development progress and bottlenecks
+- Enhanced project management through real-time status tracking
+- Clear accountability for task completion and blocking issues
+- Improved communication through mandatory status announcements
+- Better resource allocation through progress visibility
+- Historical tracking of development progression for future reference
+
+Impact:
+- Transforms task management from passive documentation to active tracking system
+- Provides real-time project visibility for stakeholders and team members
+- Enables proactive identification and resolution of blocking issues
+- Supports better project planning through historical task completion data
+- Maintains compatibility with existing spec-to-code methodology while adding tracking layer
+
+Lines affected: Multiple sections (144-163, 187-221, 1026-1032, 1045-1058, 1074-1084) - real-time status tracking integration
+
+Change 12: Single File Implementation Enforcement
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the specification to explicitly enforce Windmill's single-file constraint
+- Removed any references that might suggest creating separate files for tests or documentation
+- Clarified that ALL coding must be done within a single script file only
+
+Major clarifications added:
+
+1. Universal Windmill Platform Constraints Enhancement (Lines 124-132):
+   - Added **SINGLE FILE ONLY** constraint emphasizing no separate test files, README.md, or additional modules
+   - Added **NO EXTERNAL FILES** rule explicitly prohibiting creation of README.md, separate test files, or any additional files
+   - Reinforced that everything must be contained in the main script file
+
+2. Test Structure and Organization Update (Lines 232-237):
+   - Changed from creating separate test files to **SINGLE FILE TESTING ONLY**
+   - Added **NO SEPARATE TEST FILES** rule requiring inline test functions or test blocks within main script
+   - Added **Inline Test Implementation** guidance for language-specific inline testing patterns
+
+3. Language-Specific Testing Approaches Revision (Lines 239-243):
+   - Updated from external test runners to **Language-Specific Inline Testing Approaches**
+   - TypeScript (Bun): Include test functions within main script, use console.log or conditional test execution
+   - Python: Use `if __name__ == "__main__":` block for inline testing with assert statements
+   - Go: Include test functions within main script using conditional compilation
+   - Rust: Use `#[cfg(test)]` modules within the same file for inline testing
+
+4. Workflow Step 8 Enhancement (Lines 1069-1076):
+   - Updated to **Testing and Specification Validation (Single File Only)**
+   - Added **INLINE TESTING ONLY** requirement for test functions within main script file
+   - Added **NO SEPARATE TEST FILES** enforcement for all testing implementation
+   - Emphasized that all EARS requirements must have test cases within the single file
+
+5. Expected Results Update (Lines 1078-1090):
+   - Added **SINGLE FILE IMPLEMENTATION** as primary requirement
+   - Added **Inline test coverage** requirement for EARS requirements validation within single script
+   - Added **No external files** explicit prohibition of README.md, separate test files, or additional modules
+
+Technical Implementation Clarifications:
+- All code, tests, and functionality must be contained within one script file
+- No creation of README.md files or separate documentation files
+- No separate test files - all testing must be inline within the main script
+- Use language-appropriate inline testing patterns (conditional blocks, inline functions)
+- Maintain full specification-driven development while respecting single-file constraint
+
+Benefits:
+- Clear alignment with Windmill platform constraints
+- Eliminates confusion about file creation requirements
+- Ensures compliance with Windmill's single-file architecture
+- Maintains specification-driven development within platform limitations
+- Provides clear guidance for inline testing approaches
+
+Impact:
+- Reinforces Windmill platform compliance throughout the specification
+- Prevents creation of unauthorized external files
+- Maintains all specification-driven development benefits within single-file constraint
+- Provides clear guidance for developers familiar with multi-file development patterns
+- Ensures successful deployment and execution within Windmill environment
+
+Lines affected: Multiple sections (124-132, 232-243, 1069-1076, 1078-1090) - single file implementation enforcement
+
+Change 13: Enhanced Language-Specific Testing Conventions
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the testing guidelines to provide comprehensive examples and best practices for inline testing following proper language conventions
+- Added detailed code examples showing how to implement tests within a single file while adhering to each language's standard testing patterns
+- Clarified that tests should follow language conventions (like #[cfg(test)] in Rust) while remaining in the single file
+
+Major enhancements added:
+
+1. Enhanced Test Structure Guidelines (Lines 232-242):
+   - Added **Follow Language Conventions** requirement with specific patterns for each language
+   - Clarified proper use of TypeScript conditional blocks, Python __main__ blocks, Go build tags, and Rust #[cfg(test)]
+   - Added **Proper Test Isolation** requirement to ensure tests don't interfere with main function execution
+
+2. Comprehensive Language-Specific Examples (Lines 239-309):
+   - **TypeScript (Bun)**: Complete example showing conditional test execution with process.env.NODE_ENV
+   - **Python**: Full example demonstrating proper if __name__ == "__main__": usage with assert statements
+   - **Go**: Example showing build tags and testing.T usage for proper Go testing conventions
+   - **Rust**: Complete example with #[cfg(test)] module and #[test] functions following Rust conventions
+
+3. Language-Specific Testing Best Practices (Lines 317-343):
+   - **TypeScript (Bun) Conventions**: Environment-based conditional execution, console.assert usage, Windmill compatibility
+   - **Python Conventions**: Proper __main__ block usage, assert statements, unittest integration, import isolation
+   - **Go Conventions**: Build tags usage, testing package conventions, proper test isolation, testing.T parameter usage
+   - **Rust Conventions**: #[cfg(test)] module usage, #[test] attributes, standard testing macros, private function access
+
+Technical Implementation Details:
+- All examples show complete, working code patterns that can be directly implemented
+- Each language example follows the standard conventions for that language's testing ecosystem
+- Tests are properly isolated to not interfere with normal Windmill script execution
+- Examples demonstrate how to test the main function while maintaining single-file constraint
+- Patterns ensure tests only run when appropriate (during testing, not during normal execution)
+
+Benefits:
+- **Language Compliance**: Tests follow proper conventions for each programming language
+- **Professional Standards**: Maintains industry-standard testing practices within single-file constraint
+- **Proper Isolation**: Tests don't interfere with normal script execution in Windmill
+- **Developer Familiarity**: Uses patterns developers already know from each language ecosystem
+- **Maintainability**: Standard conventions make tests easier to understand and maintain
+
+Examples Provided:
+- TypeScript: Conditional execution with environment variables and console.assert
+- Python: Standard if __name__ == "__main__": pattern with assert statements
+- Go: Build tags and testing.T usage for proper Go testing
+- Rust: #[cfg(test)] modules with #[test] functions and standard assertions
+
+Impact:
+- Bridges the gap between single-file constraint and proper testing conventions
+- Enables professional-quality testing within Windmill's platform limitations
+- Provides clear, actionable examples for each supported language
+- Maintains specification-driven development quality while respecting platform constraints
+- Ensures tests are properly isolated and follow language best practices
+
+Lines affected: Multiple sections (232-242, 239-309, 311-343) - enhanced language-specific testing conventions
+
+Change 14: Version Consistency and Library Management Enhancement
+
+Date: 2025-07-16
+
+Details:
+- Enhanced the prompt to include comprehensive version consistency checking and library management across all supported languages
+- Added mandatory version checking requirements to ensure library versions match existing project configurations
+- Integrated version consistency into language-specific best practices and workflow processes
+
+Major enhancements added:
+
+1. Language-Specific Best Practices Enhancement (Lines 100-126):
+   - **TypeScript (Bun Runtime)**: Added "Version Consistency: Check package.json for current dependency versions and maintain consistency across imports"
+   - **Python**: Added "Version Consistency: Check requirements.txt or pyproject.toml for current dependency versions and ensure import statements match"
+   - **Go**: Added "Version Consistency: Check go.mod file for current module versions and ensure import statements use consistent versions"
+   - **Rust**: Added "Version Consistency: Check Cargo.toml for current crate versions and ensure dependency declarations match existing versions"
+
+2. Dependency Management Section Major Enhancement (Lines 985-1023):
+   - Added new **Version Consistency Requirements (Universal)** subsection covering:
+     * Always check existing dependency configuration files to determine current library versions
+     * Maintain version consistency across all dependency declarations within the same script
+     * Use the same version that is already specified in the project's dependency management files
+     * When adding new dependencies, ensure compatibility with existing dependency versions
+   - Enhanced each language-specific section with version checking requirements:
+     * TypeScript: Check package.json and maintain consistency with specified versions
+     * Python: Check requirements.txt or pyproject.toml and ensure import statements match
+     * Go: Check go.mod file and maintain consistency with specified versions
+     * Rust: Check existing Cargo.toml and ensure dependency declarations match versions
+
+3. Workflow Step 4 Enhancement (Lines 1148-1153):
+   - Added **Version Consistency Check** as the first requirement in dependency declaration step
+   - Added **Maintain Version Consistency** requirement to use existing project versions
+   - Integrated version checking into the systematic workflow process
+   - Ensures version consistency is checked before any dependency declarations
+
+Technical Implementation Features:
+- Universal version consistency checking across all four supported languages
+- Language-specific configuration file checking (package.json, requirements.txt, go.mod, Cargo.toml)
+- Integration with existing dependency management best practices
+- Workflow-level enforcement of version consistency requirements
+- Compatibility checking between new and existing dependencies
+
+Benefits:
+- **Prevents Version Conflicts**: Ensures all dependencies use consistent versions within the same project
+- **Maintains Project Integrity**: Preserves existing dependency configurations and compatibility
+- **Reduces Deployment Issues**: Prevents version mismatches that could cause runtime errors
+- **Improves Maintainability**: Makes dependency management more predictable and reliable
+- **Supports Team Collaboration**: Ensures all team members use the same dependency versions
+
+Use Cases Addressed:
+- Adding new dependencies to existing projects with established version constraints
+- Maintaining consistency when multiple scripts share common dependencies
+- Preventing accidental version upgrades that could break existing functionality
+- Ensuring compatibility between different parts of a multi-script project
+- Supporting enterprise environments with strict version control requirements
+
+Impact:
+- Transforms dependency management from ad-hoc version selection to systematic version consistency
+- Provides clear guidance for maintaining library version integrity across projects
+- Reduces debugging time related to version conflicts and compatibility issues
+- Supports professional development practices with proper version management
+- Ensures reliable and predictable dependency behavior in Windmill environments
+
+Lines affected: Multiple sections (100-126, 985-1023, 1148-1153) - version consistency and library management enhancement
