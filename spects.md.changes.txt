@@ -146,3 +146,16 @@ Changes made:
   - Prohibition of delayed updates (fixing the bug where updates only happened after completion)
 - Updated CORE FEATURES ACTIVATION to emphasize mandatory real-time tracking with required announcements
 - Ensures task status reflects actual work progress in real-time, not just final outcomes
+
+Changed file-specific documentation structure from prefixed files to folder-based organization
+
+Changes made:
+- Updated FILE-SPECIFIC DOCUMENTATION PROTOCOL to use folder structure instead of file prefixes
+- Changed from [filename].REQUIREMENTS.md to [filename]/REQUIREMENTS.md format
+- Changed from [filename].DESIGN.md to [filename]/DESIGN.md format
+- Changed from [filename].TASKS.md to [filename]/TASKS.md format
+- Updated all references throughout the document to use folder-based structure
+- Modified file-specific document format examples to reflect new folder organization
+- Updated cross-file task links to reference [other-file]/TASKS.md format
+- Added CRITICAL DOCUMENTATION PRIORITY note emphasizing these 3 files are the first thing to do when editing any code file
+- Maintained all existing functionality while organizing documentation in dedicated folders per file
