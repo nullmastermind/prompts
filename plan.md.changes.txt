@@ -1,0 +1,9 @@
+Enhanced prompt to mandate comprehensive use of web-search and codebase-retrieval tools for security-first, reliability-first planning approach:
+
+1. Added MANDATORY RESEARCH TOOLS UTILIZATION section to core principles emphasizing web-search and codebase-retrieval usage
+2. Expanded Multi-Language Research & Analysis Principles with detailed requirements for both tools
+3. Updated Phase 1 (Requirements Analysis) to mandate extensive use of both research tools
+4. Updated Phase 2 (Specification Generation) to require research-driven design decisions
+5. Updated Phase 3 (Implementation Planning) to mandate research-backed task planning
+6. Emphasized security and reliability prioritization over speed throughout all phases
+7. Added specific research requirements for security best practices, vulnerability mitigation, and reliability patterns
