@@ -104,7 +104,8 @@ Always wrap the complete User Story output within the following XML tags:
       "Given-When-Then scenario 2",
       {
         "codeQuality": [
-          "The code needs to pass linter, typecheck, and build successfully",
+          "The code written needs to build successfully",
+          "Don't write code without using it; ensure everything written is utilized in the project",
           "Comments must explain 'what' and 'why', not 'how' - code should be self-explanatory in implementation",
           "Avoid over-commenting - excessive comments indicate poor code quality",
           "Function comments must explain purpose and reasoning, placed at function beginnings",
