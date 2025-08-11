@@ -113,6 +113,7 @@ Always wrap the complete User Story output within the following XML tags:
           "Maintain long-term maintainability over short-term optimization",
           "Understand and design proper data structures first - good data structures lead to good code",
           "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required",
+          "The code you write is garbage if it doesn't follow Linus Torvalds' clean code principles - the father of Linux",
           "Run the build command and fix any remaining errors after finishing the code"
         ],
         "implementationStrategy": [
