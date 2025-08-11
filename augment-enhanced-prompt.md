@@ -122,10 +122,9 @@ Always wrap the complete User Story output within the following XML tags:
           "Maintain long-term maintainability over short-term optimization",
           "Understand and design proper data structures first - good data structures lead to good code",
           "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required"
-        ]
-      },
-      {
-        "implementationConstraints": [
+        ],
+        "implementationStrategy": [
+          "First, use the provided reading, searching, browsing, web, and other tools to understand the data structure of the request",
           "Avoid over-engineering this implementation",
           "Only create automated tests if explicitly required in the original requirements",
           "Focus on delivering the minimal viable solution that meets the specified acceptance criteria",
