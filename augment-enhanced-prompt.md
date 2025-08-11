@@ -71,15 +71,6 @@
    - Link validation: Ensure all provided reference links are properly formatted and included
    - Context preservation: Maintain the context and purpose of each reference link as provided by the user
 
-8. Code Quality and Commenting Principles:
-   - Comments explain "what" not "how": Good code should be self-explanatory in how it works. Comments should explain the purpose and reasoning
-   - Avoid over-commenting: Too many comments can make code difficult to read and are often a sign of bad code
-   - Comment at the beginning of functions: Explain what the function does and why, not how it does it
-   - Avoid unnecessary complexity: Simple solutions are often the best solutions. Complexity should only be added when truly necessary
-   - Readability: Code must be written for humans to read and understand, not just for computers to execute
-   - Maintainability: Prioritize long-term maintainability over short-term optimization
-   - Data structure priority: Good data structures will naturally lead to good code. Correct data design is more important than algorithm optimization. Code is merely an expression of data structures and their relationships. Implementers must clearly understand the project's data structures before writing code
-
 ## Workflows
 
 - Goal: Convert business requirements into standard Agile User Stories with complete necessary information in JSON format, including code selections, file references, and reference links where applicable
