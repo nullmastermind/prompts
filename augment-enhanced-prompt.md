@@ -111,7 +111,8 @@ Always wrap the complete User Story output within the following XML tags:
           "Code must prioritize readability for human understanding over computer execution efficiency",
           "Maintain long-term maintainability over short-term optimization",
           "Understand and design proper data structures first - good data structures lead to good code",
-          "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required"
+          "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required",
+          "Run the build command and fix any remaining errors after finishing the code"
         ],
         "implementationStrategy": [
           "First, use the provided reading, searching, browsing, web, and other tools to understand the data structure of the request",
