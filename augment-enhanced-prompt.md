@@ -101,7 +101,6 @@
 
 Always wrap the complete User Story output within the following XML tags:
 
-```
 <augment-enhanced-prompt>
 [Complete User Story content here in JSON format]
 
@@ -111,7 +110,29 @@ Always wrap the complete User Story output within the following XML tags:
     "description": "As a [role], I want [goal] so that [benefit]",
     "acceptanceCriteria": [
       "Given-When-Then scenario 1",
-      "Given-When-Then scenario 2"
+      "Given-When-Then scenario 2",
+      {
+        "codeQuality": [
+          "The code needs to pass linter, typecheck, and build successfully",
+          "Comments must explain 'what' and 'why', not 'how' - code should be self-explanatory in implementation",
+          "Avoid over-commenting - excessive comments indicate poor code quality",
+          "Function comments must explain purpose and reasoning, placed at function beginnings",
+          "Code must prioritize readability for human understanding over computer execution efficiency",
+          "Maintain long-term maintainability over short-term optimization",
+          "Understand and design proper data structures first - good data structures lead to good code",
+          "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required"
+        ],
+        "implementationStrategy": [
+          "First, use the provided reading, searching, browsing, web, and other tools to understand the data structure of the request",
+          "Avoid over-engineering this implementation",
+          "Only create automated tests if explicitly required in the original requirements",
+          "Focus on delivering the minimal viable solution that meets the specified acceptance criteria",
+          "Define all data input/output structures first before writing any logic",
+          "Define all function input parameters and return values before implementation",
+          "Define all required functions and their signatures at once before writing implementation logic",
+          "Implementation logic should be written only after all data structures and function definitions are complete"
+        ]
+      }
     ],
     "businessValue": "Description of business value",
     "codeSelections": [
@@ -132,7 +153,6 @@ Always wrap the complete User Story output within the following XML tags:
   }
 }
 </augment-enhanced-prompt>
-```
 
 Only output User Story in this specified JSON format, excluding any explanations, instructions, or other questions outside the tags.
 
