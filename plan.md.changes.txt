@@ -1,0 +1,17 @@
+Enhanced prompt to mandate comprehensive use of web-search and codebase-retrieval tools for security-first, reliability-first planning approach:
+
+1. Added MANDATORY RESEARCH TOOLS UTILIZATION section to core principles emphasizing web-search and codebase-retrieval usage
+2. Expanded Multi-Language Research & Analysis Principles with detailed requirements for both tools
+3. Updated Phase 1 (Requirements Analysis) to mandate extensive use of both research tools
+4. Updated Phase 2 (Specification Generation) to require research-driven design decisions
+5. Updated Phase 3 (Implementation Planning) to mandate research-backed task planning
+6. Emphasized security and reliability prioritization over speed throughout all phases
+7. Added specific research requirements for security best practices, vulnerability mitigation, and reliability patterns
+
+Added automatic workflow execution mandate to ensure complete specification delivery:
+
+1. Enhanced Initialization section with AUTOMATIC WORKFLOW EXECUTION requirement
+2. Added MANDATORY FILE CREATION instruction for all three specification files
+3. Implemented COMPLETE DELIVERY mandate to execute all 4 phases without interruption
+4. Added NO INTERRUPTION POLICY to prevent pausing between phases
+5. Established WORKFLOW EXECUTION MANDATE for automatic complete specification package delivery
