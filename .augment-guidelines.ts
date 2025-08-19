@@ -1,0 +1,2 @@
+- Do not create *.test.ts unless specifically requested.
+- Run `bun run typecheck` and fix any type errors after completing the coding requirements.
