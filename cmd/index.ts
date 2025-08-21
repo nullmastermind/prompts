@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { writeFile, readFile } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";

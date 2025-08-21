@@ -1,0 +1,42 @@
+# Source files
+cmd/
+*.ts
+tsconfig.json
+
+# Development files
+.git/
+.gitignore
+node_modules/
+*.log
+*.md
+*.changes.txt
+
+# Build artifacts
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+
+# Documentation (exclude all except README)
+*.md
+!README.md
+
+# Other project files
+bun.lock
+proxy/
+common.augment-guidelines
+ts.augment-guidelines

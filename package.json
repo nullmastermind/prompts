@@ -1,5 +1,14 @@
 {
   "name": "@dccxx/augment",
+  "version": "1.0.0",
+  "description": "Augment guidelines fetcher and manager",
+  "main": "dist/index.js",
+  "bin": {
+    "augment": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "private": false,
   "devDependencies": {
     "@types/bun": "latest",
@@ -9,6 +18,15 @@
     "typescript": "^5"
   },
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "cmd": "bun run ./cmd/index.ts"
-  }
+  },
+  "keywords": [
+    "augment",
+    "guidelines",
+    "cli"
+  ],
+  "author": "rustydong",
+  "license": "MIT"
 }
