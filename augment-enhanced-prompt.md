@@ -101,32 +101,7 @@ Always wrap the complete User Story output within the following XML tags:
     "description": "As a [role], I want [goal] so that [benefit]",
     "acceptanceCriteria": [
       "Given-When-Then scenario 1",
-      "Given-When-Then scenario 2",
-      {
-        "codeQuality": [
-          "The code written needs to build successfully",
-          "Don't write code without using it; ensure everything written is utilized in the project",
-          "Comments must explain 'what' and 'why', not 'how' - code should be self-explanatory in implementation",
-          "Avoid over-commenting - excessive comments indicate poor code quality",
-          "Function comments must explain purpose and reasoning, placed at function beginnings",
-          "Code must prioritize readability for human understanding over computer execution efficiency",
-          "Maintain long-term maintainability over short-term optimization",
-          "Understand and design proper data structures first - good data structures lead to good code",
-          "Avoid unnecessary complexity - implement simple solutions unless complexity is truly required",
-          "The code you write is garbage if it doesn't follow Linus Torvalds' clean code principles - the father of Linux",
-          "Run the build command and fix any remaining errors after finishing the code"
-        ],
-        "implementationStrategy": [
-          "First, use the provided reading, searching, browsing, web, and other tools to understand the data structure of the request",
-          "Avoid over-engineering this implementation",
-          "Only create automated tests if explicitly required in the original requirements",
-          "Focus on delivering the minimal viable solution that meets the specified acceptance criteria",
-          "Define all data input/output structures first before writing any logic",
-          "Define all function input parameters and return values before implementation",
-          "Define all required functions and their signatures at once before writing implementation logic",
-          "Implementation logic should be written only after all data structures and function definitions are complete"
-        ]
-      }
+      "Given-When-Then scenario 2"
     ],
     "businessValue": "Description of business value",
     "codeSelections": [
