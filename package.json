@@ -1,12 +1,14 @@
 {
   "name": "prompts",
-  "type": "module",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@types/bun": "latest",
     "prettier": "^3.6.2"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "cmd": "bun run ./cmd/index.ts"
   }
 }
