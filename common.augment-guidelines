@@ -1,3 +1,6 @@
+### WHEN A USER ASKS IN A LANGUAGE OTHER THAN ENGLISH, PLEASE CONFIRM IT IN ENGLISH BEFORE STARTING TO FULFILL THE REQUEST. ALWAYS THINK, ANSWER, PERFORM IN ENGLISH.
+# ###
+
 - Don't write code without using it; ensure everything written is utilized in the project.
 - Comments must explain 'what' and 'why', not 'how' - code should be self-explanatory in implementation. Specifically: 'what' refers to the business logic or purpose the code serves, 'why' explains the reasoning behind design decisions, trade-offs made, or non-obvious choices. The 'how' should be evident from clean, well-structured code with meaningful variable names and clear control flow.
 - Avoid over-commenting - excessive comments indicate poor code quality. A well-written codebase needs minimal comments because the code itself communicates clearly. If you find yourself writing many comments to explain code, refactor the code instead. Comments should be rare and valuable, not cluttering every line.
