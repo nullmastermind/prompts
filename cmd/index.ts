@@ -17,7 +17,7 @@ async function fetchAndSaveGuidelines() {
     }
 
     const githubContent = await response.text();
-    const filePath = join(process.cwd(), ".augment-guidelines");
+    const filePath = join(process.cwd(), "AGENTS.md");
 
     // Check if file exists and read its content
     let existingContent = "";
@@ -27,7 +27,7 @@ async function fetchAndSaveGuidelines() {
       // Check if GitHub content is already present
       if (existingContent.includes(githubContent.trim())) {
         console.log(
-          "GitHub guidelines already present in .augment-guidelines, skipping...",
+          "GitHub guidelines already present in AGENTS.md, skipping...",
         );
         return;
       }
