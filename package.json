@@ -1,6 +1,6 @@
 {
   "name": "@dccxx/augment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Augment guidelines fetcher and manager",
   "main": "dist/index.js",
   "bin": {
